@@ -1,0 +1,10 @@
+.homePage {
+  background-image: linear-gradient(
+    to right bottom,
+    #90e0ef,
+    #87ccff,
+    #beabfd,
+    #f682c5,
+    #ff6b6b
+  );
+}

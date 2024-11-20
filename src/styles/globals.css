@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bt-c-blue: #1fb6ff;
+  --bt-c-yellow: #ffe66d;
+  --bt-c-pink: #ff6b6b;
+  --bt-c-gray: #333333;
+  --bt-c-green: #a8d5ba;
+  --bt-c-orange: #fff4e6;
+}
+
+body {
+  color: var(--bt-c-gray);
+}

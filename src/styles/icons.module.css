@@ -1,0 +1,6 @@
+.brand {
+  mask: url("../../public/icons/logo.png");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}

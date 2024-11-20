@@ -3,7 +3,6 @@ import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
 import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
-import { version } from "os";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -18,7 +17,7 @@ export default [
       react: {
         version: "19.0.0",
       },
-      ignore: ["/node_modules"],
+      ignores: ["node_modules/*", ".next/*"],
     },
   },
 ];
