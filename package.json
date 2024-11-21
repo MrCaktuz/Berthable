@@ -15,10 +15,12 @@
     "check-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
+    "@next/env": "^15.0.3",
+    "mongoose": "^8.8.2",
     "next": "15.0.3",
     "next-intl": "^3.25.1",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",

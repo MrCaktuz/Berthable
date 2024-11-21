@@ -29,7 +29,7 @@ echo '🧐 Looks good, trying to build now'
 
 npm run build ||
 (
-    echo '❌🛠❌ Failed Build Check ❌🛠❌ '
+    echo '❌🛠 ❌ Failed Build Check ❌🛠 ❌ '
     false;
 )
 
