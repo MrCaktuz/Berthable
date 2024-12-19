@@ -1,0 +1,16 @@
+/**
+ * Theme Name:        Bertheme
+ * Description:       Tailor made theme for the cooking blog Berthable.
+ * Version:           1.0.0
+ * Author:            MrCaktuz
+ * Author URI:        https://mathieu.claessens.pro
+ * License:           GNU General Public License v2.0 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       Berthable
+ */
+html {
+  background-color: white;
+  color: black;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -35,3 +35,9 @@ docker compose down
 ```
 docker compose run --rm wp [COMMAND]
 ```
+
+#### Work on the theme styles
+
+```
+sass --watch web/app/themes/bertheme/assets/sass:web/app/themes/bertheme
+```
