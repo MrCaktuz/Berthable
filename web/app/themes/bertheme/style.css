@@ -538,17 +538,37 @@ p:last-child {
   }
 }
 
-.reciepe {
+.recipe {
   margin: var(--bt-spacer-6) 0;
+}
+@media (min-width: 992px) {
+  .recipe {
+    margin: var(--bt-spacer-8) 0;
+  }
+}
+.recipe__illustration {
+  position: relative;
+  display: block;
+  width: 40rem;
+  height: 40rem;
+}
+.recipe__illustration::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(var(--bt-c-light)));
+  background-image: linear-gradient(to bottom, transparent, var(--bt-c-light));
+}
+.recipe__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.recipe__description {
   padding: var(--bt-spacer-3);
   border-radius: var(--bt-radius-4);
   border: var(--bt-br);
   -webkit-box-shadow: var(--bt-sh-darker);
           box-shadow: var(--bt-sh-darker);
   background-color: var(--bt-c-light);
-}
-@media (min-width: 992px) {
-  .reciepe {
-    margin: var(--bt-spacer-8) 0;
-  }
 }

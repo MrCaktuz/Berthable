@@ -11,6 +11,8 @@ class Bertheme
   private function __construct()
   {
     include BT_INC_DIR . '/menuAdmin.php';
+    include BT_INC_DIR . '/recipe.php';
+
     // Hide admin tool bar on website.
     add_filter('show_admin_bar', '__return_false');
     // Link our custom scripts & styles.

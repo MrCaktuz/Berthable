@@ -1,0 +1,41 @@
+@use '../utils/mixins.scss' as *;
+
+.recipe {
+  margin: var(--bt-spacer-6) 0;
+
+  @include mq(lg) {
+    margin: var(--bt-spacer-8) 0;
+  }
+
+  &__illustration {
+    position: relative;
+    display: block;
+    width: 40rem;
+    height: 40rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(
+        to bottom,
+        transparent,
+        var(--bt-c-light)
+      );
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__description {
+    padding: var(--bt-spacer-3);
+    border-radius: var(--bt-radius-4);
+    border: var(--bt-br);
+    box-shadow: var(--bt-sh-darker);
+    background-color: var(--bt-c-light);
+  }
+}
