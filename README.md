@@ -8,6 +8,8 @@ This project uses the [Bedrock](https://roots.io/bedrock/) WordPress boilerplate
 
 ### First setup
 
+run
+
 ```
 composer install
 ```
@@ -34,4 +36,18 @@ docker compose down
 
 ```
 docker compose run --rm wp [COMMAND]
+```
+
+#### Work on the theme styles
+
+Do an install of npm packages
+
+```
+npm install
+```
+
+After that you can watch styles with this
+
+```
+npm run style:watch
 ```

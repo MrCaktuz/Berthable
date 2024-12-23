@@ -1,0 +1,67 @@
+{
+  "name": "bertheme",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "keywords": [
+    "wordpress",
+    "sass",
+    "javascript"
+  ],
+  "author": "MrCaktuz",
+  "license": "ISC",
+  "description": "Berthable is a personal project to create a blog of cooking reciepies for Bertha",
+  "scripts": {
+    "prepare": "husky",
+    "format:fix": "prettier --write '**/*.{js,json,css,scss,php}'",
+    "format:check": "prettier --check '**/*.{js,json,css,scss,php}'",
+    "lint:fix": "eslint web/app/themes/bertheme/**/*.js --fix",
+    "lint:check": "eslint web/app/themes/bertheme/**/*.js",
+    "postcss:build": "postcss web/app/themes/bertheme/style.css --output web/app/themes/bertheme/style.css",
+    "postcss:watch": "postcss --watch web/app/themes/bertheme/style.css --output web/app/themes/bertheme/style.css",
+    "sass:build": "sass web/app/themes/bertheme/assets/scss/style.scss:web/app/themes/bertheme/style.css --no-source-map",
+    "sass:watch": "sass --watch web/app/themes/bertheme/assets/scss/style.scss:web/app/themes/bertheme/style.css --no-source-map",
+    "style:check": "stylelint --allow-empty-input '**/*.{css,scss}'",
+    "style:fix": "stylelint --fix --allow-empty-input '**/*.{css,scss}'",
+    "style:build": "npm run sass:build && npm run postcss:build",
+    "style:watch": "npm run sass:watch & npm run postcss:watch"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@prettier/plugin-php": "^0.22.2",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "postcss": "^8.4.49",
+    "postcss-cli": "^11.0.0",
+    "prettier": "3.4.2",
+    "sass": "^1.83.0",
+    "stylelint": "^16.12.0",
+    "stylelint-config-prettier-scss": "^1.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "stylelint-order": "^6.0.4"
+  },
+  "lint-staged": {
+    "*.scss": [
+      "npm run style:fix",
+      "npm run format:fix"
+    ],
+    "*.css": [
+      "npm run style:fix",
+      "npm run format:fix"
+    ],
+    "*.js": [
+      "npm run lint:fix",
+      "npm run format:fix"
+    ],
+    "*.json": [
+      "npm run format:fix"
+    ],
+    "*.php": [
+      "npm run format:fix"
+    ]
+  }
+}

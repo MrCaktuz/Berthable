@@ -1,0 +1,9 @@
+echo "🐺 Fixing your work before committing 😇"
+
+npx lint-staged ||
+(
+    echo "❌ 🐺 ❌ Failed Lint stage ❌ 🐺 ❌"
+    false;
+)
+
+echo "✅ Good work, it's committed"

@@ -1,0 +1,14 @@
+web/app/plugins
+web/app/mu-plugins
+web/app/themes/twentytwentyfive
+web/app/themes/bertheme/style.css
+web/app/languages
+web/app/upgrade
+web/app/uploads
+web/app/cache
+web/wp
+web/index.php
+web/wp-config.php
+.vscode
+node_modules
+vendor

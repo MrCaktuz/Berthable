@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-standard-scss",
+    "stylelint-config-prettier-scss",
+    "stylelint-order"
+  ],
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "block-no-empty": true,
+    "no-duplicate-selectors": true,
+    "font-family-no-duplicate-names": true,
+    "color-named": "never",
+    "selector-class-pattern": null
+  }
+}

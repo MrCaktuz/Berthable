@@ -35,3 +35,6 @@ wp-cli.local.yml
 # OS specific files
 .DS_Store
 Thumbs.db
+
+# Npm
+node_modules
