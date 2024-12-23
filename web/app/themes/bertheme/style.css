@@ -1,0 +1,554 @@
+/**
+ * Theme Name:        Bertheme
+ * Description:       Tailor made theme for the cooking blog Berthable.
+ * Version:           1.0.0
+ * Author:            MrCaktuz
+ * Author URI:        https://mathieu.claessens.pro
+ * License:           GNU General Public License v2.0 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       Berthable
+ */
+/* Normalize & Resets */
+/* Document
+   ========================================================================== */
+html {
+  line-height: 1.15; /* Adjust default line height */
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; /* Prevent font scaling in Safari */
+}
+
+/* Sections
+   ========================================================================== */
+body {
+  margin: 0;
+}
+
+/* Render the main element consistently. */
+main {
+  display: block;
+}
+
+/* Correct the font size and margin on `h1` elements. */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/* Remove the margin on lists. */
+ol,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Correct the padding on `pre` elements. */
+pre {
+  font-family: monospace, monospace; /* Avoid improper font fallback */ /* stylelint-disable-line font-family-no-duplicate-names */
+  font-size: 1em;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/* Remove the gray background on active links in IE 10. */
+a {
+  background-color: transparent;
+  text-decoration: none;
+}
+
+/* Correct the inheritance and scaling of fonts in all elements. */
+abbr[title] {
+  border-bottom: none; /* Remove the default border for abbreviations */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/* Add the correct font weight in Chrome, Edge, and Safari. */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/* Remove the default font size for sub and sup. */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/* Remove the border on images inside links in IE 10. */
+img {
+  border-style: none;
+  display: block; /* Ensure images behave as block elements */
+  max-width: 100%; /* Make images responsive */
+}
+
+/* Forms
+   ========================================================================== */
+/* Remove the margin on controls. */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font: inherit; /* Inherit font styles */
+}
+
+/* Show the overflow in IE. */
+button {
+  overflow: visible;
+}
+
+/* Remove the inheritance of text transform in Edge and Firefox. */
+button,
+select {
+  text-transform: none;
+}
+
+/* Remove the inner border and padding in Firefox. */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+}
+
+/* Remove the default button styling in Chrome and Safari. */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/* Restore the focus styles unset by the previous rule. */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/* Remove the default background and padding in Chrome, Safari, and Opera. */
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+
+/* Remove the default appearance of search inputs. */
+[type=search] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+  outline-offset: -2px;
+}
+
+/* Correct the odd appearance in Chrome and Safari. */
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Correct the style of invalid elements. */
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/* Correct the padding on file inputs. */
+[type=file] {
+  padding: 0;
+}
+
+/* Interactive
+   ========================================================================== */
+/* Add the correct display in Edge, IE 10+, and Firefox. */
+details {
+  display: block;
+}
+
+/* Add the correct styles for closed and open details. */
+summary {
+  display: list-item;
+}
+
+/* Miscellaneous
+   ========================================================================== */
+/* Add the correct display in IE 10+. */
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* 1. Remove all default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* 2. Set a consistent base font size and line height */
+html {
+  font-size: 10px; /* Default 10px */
+  line-height: 1.3;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%; /* Prevent font scaling in Safari */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* 3. Inherit font styles for all elements */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 4. Remove list styles and reset tables */
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 5. Reset media elements */
+img,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Reset links and buttons */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  all: unset; /* Reset all styles */
+  cursor: pointer;
+}
+
+/* 7. Ensure elements take up full height */
+html,
+body {
+  height: 100%;
+}
+
+/* 8. Reset form elements */
+input,
+textarea,
+select {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 9. Reset root container */
+#root,
+#app {
+  isolation: isolate; /* Create a new stacking context for root elements */
+}
+
+/* 10. Custom tweaks for new HTML elements */
+dialog {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+/* Global styles */
+:root {
+  --bt-c-lightest: #efebff;
+  --bt-c-light: #d4d0ff;
+  --bt-c-primary: #502d73;
+  --bt-c-darker: #2b2040;
+  --bt-c-darkest: #1c1c1c;
+  --bt-c-error: #bd0000;
+  --bt-c-success: #006b00;
+  --bt-spacer-0: 0rem;
+  --bt-spacer-1: 0.8rem;
+  --bt-spacer-2: 1.6rem;
+  --bt-spacer-3: 2.4rem;
+  --bt-spacer-4: 3.2rem;
+  --bt-spacer-5: 4rem;
+  --bt-spacer-6: 4.8rem;
+  --bt-spacer-7: 5.6rem;
+  --bt-spacer-8: 6.4rem;
+  --bt-spacer-9: 7.2rem;
+  --bt-spacer-10: 8rem;
+  --bt-ff-text: 'Lato', serif;
+  --bt-ff-title: 'Playfair', serif;
+  --bt-fs-0: 0rem;
+  --bt-fs-1: 0.8rem;
+  --bt-fs-2: 1.6rem;
+  --bt-fs-3: 2.4rem;
+  --bt-fs-4: 3.2rem;
+  --bt-fs-5: 4rem;
+  --bt-fs-6: 4.8rem;
+  --bt-fs-7: 5.6rem;
+  --bt-fs-8: 6.4rem;
+  --bt-fs-9: 7.2rem;
+  --bt-fs-10: 8rem;
+  --bt-fw-light: 300;
+  --bt-fw-normal: 400;
+  --bt-fw-bold: 700;
+  --bt-sh-transparent: 0 0.5rem 1rem transparent;
+  --bt-sh-lightest: 0 0.5rem 1rem rgba(239, 235, 255, 0.2);
+  --bt-sh-light: 0 0.5rem 1rem rgba(212, 208, 255, 0.2);
+  --bt-sh-primary: 0 0.5rem 1rem rgba(80, 45, 115, 0.2);
+  --bt-sh-darker: 0 0.5rem 1rem rgba(43, 32, 64, 0.2);
+  --bt-sh-darkest: 0 0.5rem 1rem rgba(28, 28, 28, 0.2);
+  --bt-sh-error: 0 0.5rem 1rem rgba(189, 0, 0, 0.2);
+  --bt-sh-success: 0 0.5rem 1rem rgba(0, 107, 0, 0.2);
+  --bt-radius-0: 0rem;
+  --bt-radius-1: 0.8rem;
+  --bt-radius-2: 1.6rem;
+  --bt-radius-3: 2.4rem;
+  --bt-radius-4: 3.2rem;
+  --bt-radius-5: 4rem;
+  --bt-radius-6: 4.8rem;
+  --bt-radius-7: 5.6rem;
+  --bt-radius-8: 6.4rem;
+  --bt-radius-9: 7.2rem;
+  --bt-radius-10: 8rem;
+  --bt-tr: all 300ms ease-in-out;
+  --bt-br: solid 0.1rem transparent;
+  --bt-br-lightest: solid 0.1rem var(--bt-c-lightest);
+  --bt-br-light: solid 0.1rem var(--bt-c-light);
+  --bt-br-primary: solid 0.1rem var(--bt-c-primary);
+  --bt-br-darker: solid 0.1rem var(--bt-c-darker);
+  --bt-br-darkest: solid 0.1rem var(--bt-c-darkest);
+  --bt-br-error: solid 0.1rem var(--bt-c-error);
+  --bt-br-success: solid 0.1rem var(--bt-c-success);
+}
+
+html {
+  font-family: var(--bt-ff-text);
+  color: var(--bt-c-darker);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: var(--bt-fs-2);
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+body::after {
+  content: "";
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-color: var(--bt-c-light);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--bt-c-light)), color-stop(#afa5dc), color-stop(#8d7cb9), color-stop(#6e5496), to(var(--bt-c-primary)));
+  background-image: linear-gradient(to right bottom, var(--bt-c-light), #afa5dc, #8d7cb9, #6e5496, var(--bt-c-primary));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0 0 1em;
+  font-family: var(--bt-ff-title);
+}
+
+p {
+  margin-bottom: 1em;
+  max-width: 50em;
+}
+p:last-child {
+  margin-bottom: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+/* Components */
+.footer {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: var(--bt-spacer-6) 0;
+  background-color: var(--bt-c-primary);
+  color: var(--bt-c-lightest);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  padding: var(--bt-spacer-4) 0;
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
+  -webkit-box-shadow: var(--bt-sh-transparent);
+          box-shadow: var(--bt-sh-transparent);
+  overflow: hidden;
+}
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  z-index: -1;
+  background-color: var(--bt-c-light);
+  background-image: -webkit-gradient(linear, left top, right bottom, from(var(--bt-c-light)), color-stop(#afa5dc), color-stop(#8d7cb9), color-stop(#6e5496), to(var(--bt-c-primary)));
+  background-image: linear-gradient(to right bottom, var(--bt-c-light), #afa5dc, #8d7cb9, #6e5496, var(--bt-c-primary));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.header.scrolled {
+  -webkit-box-shadow: var(--bt-sh-primary);
+          box-shadow: var(--bt-sh-primary);
+  padding: var(--bt-spacer-2) 0;
+}
+.header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__logo {
+  display: block;
+  margin-right: var(--bt-spacer-2);
+  width: 4.8rem;
+  height: 4.8rem;
+}
+.header__brand {
+  font-family: var(--bt-ff-title);
+  font-size: var(--bt-fs-4);
+}
+
+.page {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 var(--bt-spacer-2);
+}
+@media (min-width: 576px) {
+  .container {
+    padding: 0 var(--bt-spacer-4);
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    padding: 0 var(--bt-spacer-6);
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    padding: 0 var(--bt-spacer-8);
+  }
+}
+
+.reciepe {
+  margin: var(--bt-spacer-6) 0;
+  padding: var(--bt-spacer-3);
+  border-radius: var(--bt-radius-4);
+  border: var(--bt-br);
+  -webkit-box-shadow: var(--bt-sh-darker);
+          box-shadow: var(--bt-sh-darker);
+  background-color: var(--bt-c-light);
+}
+@media (min-width: 992px) {
+  .reciepe {
+    margin: var(--bt-spacer-8) 0;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../utils/mixins.scss' as *;
+
+.page {
+  flex: 1 1 auto;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 120rem;
+  padding: 0 var(--bt-spacer-2);
+  @include mq(sm) {
+    padding: 0 var(--bt-spacer-4);
+  }
+  @include mq(md) {
+    padding: 0 var(--bt-spacer-6);
+  }
+  @include mq(lg) {
+    padding: 0 var(--bt-spacer-8);
+  }
+}

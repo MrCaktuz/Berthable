@@ -1,0 +1,85 @@
+/* 1. Remove all default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Set a consistent base font size and line height */
+html {
+  font-size: 10px; /* Default 10px */
+  line-height: 1.3;
+  text-size-adjust: 100%; /* Prevent font scaling in Safari */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+/* 3. Inherit font styles for all elements */
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* 4. Remove list styles and reset tables */
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 5. Reset media elements */
+img,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6. Reset links and buttons */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  all: unset; /* Reset all styles */
+  cursor: pointer;
+}
+
+/* 7. Ensure elements take up full height */
+html,
+body {
+  height: 100%;
+}
+
+/* 8. Reset form elements */
+input,
+textarea,
+select {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 9. Reset root container */
+#root,
+#app {
+  isolation: isolate; /* Create a new stacking context for root elements */
+}
+
+/* 10. Custom tweaks for new HTML elements */
+dialog {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+}

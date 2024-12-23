@@ -1,0 +1,64 @@
+@use '../utils/variables.scss' as *;
+@use '../utils/mixins.scss' as *;
+
+:root {
+  @include set-variables('c', $colors);
+  @include set-variables('spacer', $spacers);
+  @include set-variables('ff', $font-families);
+  @include set-variables('fs', $font-sizes);
+  @include set-variables('fw', $font-weights);
+  @include set-variables('sh', $shadows);
+  @include set-variables('radius', $radius);
+  @include set-variables('tr', $transitions);
+  @include set-variables('br', $borders);
+
+  // @include set-variables("bp", $breakpoints);
+}
+
+html {
+  font-family: var(--bt-ff-text);
+  color: var(--bt-c-darker);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--bt-fs-2);
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  &::after {
+    content: '';
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    @include main-bg;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  margin: 0 0 1em;
+  font-family: var(--bt-ff-title);
+}
+
+p {
+  margin-bottom: 1em;
+  max-width: 50em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

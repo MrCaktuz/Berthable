@@ -1,0 +1,40 @@
+@use '../utils/variables.scss' as *;
+@use 'SASS:map';
+
+@mixin main-bg() {
+  background-color: var(--bt-c-light);
+  background-image: linear-gradient(
+    to right bottom,
+    var(--bt-c-light),
+    #afa5dc,
+    #8d7cb9,
+    #6e5496,
+    var(--bt-c-primary)
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@mixin size($width: auto, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin set-variables($key, $array) {
+  @each $name, $value in $array {
+    @if $name == 'default' {
+      --bt-#{$key}: #{$value};
+    } @else {
+      --bt-#{$key}-#{$name}: #{$value};
+    }
+  }
+}
+
+@mixin mq($breakpoint) {
+  @if $breakpoint != 'xs' {
+    @media (min-width: map.get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
