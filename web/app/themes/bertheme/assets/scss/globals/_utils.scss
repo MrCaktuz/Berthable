@@ -1,4 +1,4 @@
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -10,7 +10,7 @@
   border: 0;
 }
 
-.sr-only-focusable:focus {
+.srOnly--focusable:focus {
   position: static;
   width: auto;
   height: auto;

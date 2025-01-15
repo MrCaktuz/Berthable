@@ -1,15 +1,15 @@
-@use '../utils/variables.scss' as *;
+@use '../utils/variables' as *;
 @use 'SASS:map';
 
 @mixin main-bg() {
-  background-color: var(--bt-c-light);
+  background-color: var(--bt-c-secondary);
   background-image: linear-gradient(
     to right bottom,
-    var(--bt-c-light),
-    #afa5dc,
-    #8d7cb9,
-    #6e5496,
-    var(--bt-c-primary)
+    #70bea8,
+    #83c898,
+    #a5d082,
+    #cfd36f,
+    #ffd166
   );
   background-position: center;
   background-repeat: no-repeat;
@@ -37,4 +37,10 @@
       @content;
     }
   }
+}
+
+@mixin base-mask() {
+  mask-size: cover;
+  mask-position: center;
+  mask-repeat: no-repeat;
 }

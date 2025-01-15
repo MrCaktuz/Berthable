@@ -15,8 +15,11 @@
 </head>
 <body <?php body_class(); ?>>
   <header class="header">
-    <div class="container header__content">
-      <?php include BT_THEME_DIR . '/parts/header/brand.php'; ?>
-      <?php include BT_THEME_DIR . '/parts/header/menu.php'; ?>
+    <div class="container">
+      <div class="header__content">
+        <?php include BT_THEME_DIR . '/parts/header/brand.php'; ?>
+        <?php include BT_THEME_DIR . '/parts/header/menu.php'; ?>
+      </div>
     </div>
+    <?php include BT_THEME_DIR . '/parts/header/filters.php'; ?>
   </header>

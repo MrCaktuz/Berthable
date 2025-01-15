@@ -1,0 +1,25 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+// Icons
+@each $iconName in $icons {
+  .icon--#{$iconName} {
+    background-color: var(--bt-c-darkest);
+    mask-image: url('assets/img/svg/#{$iconName}.svg');
+    @include base-mask;
+  }
+}
+
+// Sizes
+@each $number, $value in $spacers {
+  .icon--#{$number} {
+    @include size(var(--bt-spacer-#{$number}));
+  }
+}
+
+// Colors
+@each $colorName, $value in $colors {
+  .icon--#{$colorName} {
+    background-color: var(--bt-c-#{$colorName});
+  }
+}

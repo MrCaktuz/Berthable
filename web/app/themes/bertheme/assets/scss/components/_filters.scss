@@ -1,0 +1,25 @@
+@use '../utils/mixins' as *;
+
+.filters {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: var(--bt-tr);
+
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__content {
+    height: calc(100vh - 9.6rem + var(--bt-spacer-2));
+    height: calc(100dvh - 9.6rem + var(--bt-spacer-2));
+    padding: var(--bt-spacer-4) 0;
+  }
+}
+
+.header:has(.container .header__content .menu__checkbox:checked) .filters {
+  grid-template-rows: 1fr;
+
+  &__wrapper {
+    overflow-y: scroll;
+  }
+}

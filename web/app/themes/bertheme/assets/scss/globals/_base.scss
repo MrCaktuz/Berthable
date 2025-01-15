@@ -1,5 +1,5 @@
-@use '../utils/variables.scss' as *;
-@use '../utils/mixins.scss' as *;
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
 
 :root {
   @include set-variables('c', $colors);

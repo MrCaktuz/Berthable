@@ -1,0 +1,54 @@
+@use '../utils/mixins' as *;
+
+.menu {
+  &__btn {
+    position: relative;
+    display: block;
+    @include size(var(--bt-spacer-3));
+
+    .btn__icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      @include size(2rem);
+
+      transform: translate(-50%, -50%);
+      transition: var(--bt-tr);
+
+      &.icon--close {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+
+    &:checked {
+      & ~ .menu__btn .btn__icon {
+        &.icon--close {
+          opacity: 1;
+        }
+
+        &.icon--menu {
+          opacity: 0;
+        }
+      }
+    }
+
+    &:active,
+    &:focus-visible {
+      & + .btn--icon {
+        transform: scale(1.2);
+
+        &::after {
+          opacity: 1;
+          transform: scale(0.8);
+        }
+      }
+    }
+  }
+}

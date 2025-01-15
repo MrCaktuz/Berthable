@@ -1,0 +1,63 @@
+@use '../utils/mixins' as *;
+
+.searchSection {
+  display: flex;
+  background-color: var(--bt-c-darkest);
+  border-radius: var(--bt-radius-7);
+  border: var(--bt-br-darker);
+
+  &__input {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--bt-c-lightest);
+    padding: 0 var(--bt-spacer-3);
+    height: var(--bt-spacer-7);
+
+    &::placeholder {
+      color: var(--bt-c-lighter);
+    }
+  }
+
+  &__submit {
+    position: relative;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bt-c-darker);
+    @include size(var(--bt-spacer-7));
+
+    border-radius: 0 var(--bt-spacer-7) var(--bt-spacer-7) 0;
+    transition: var(--bt-tr);
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: calc(var(--bt-spacer-05) * -1);
+      border: var(--bt-br-darkest);
+      border-radius: 0 var(--bt-spacer-7) var(--bt-spacer-7) 0;
+      opacity: 0;
+      transition: var(--bt-tr);
+    }
+
+    &:hover,
+    &:active,
+    &:focus-visible {
+      // background-color: var(--bt-c-darkest);
+
+      & > .btn__icon {
+        transform: scale(1.2);
+      }
+    }
+
+    &:active,
+    &:focus-visible {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

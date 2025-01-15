@@ -3,6 +3,7 @@
 // === Globals ===
 $ratios: (
   '0': 0,
+  '05': 0.25,
   '1': 0.5,
   '2': 1,
   '3': 1.5,
@@ -22,16 +23,21 @@ $breakpoints: (
   'xl': 1200px,
   'xxl': 1400px,
 );
+$icons: ('close', 'delete', 'filters', 'menu', 'search', 'timer');
 
 // === Colors ===
 $colors: (
-  'lightest': #efebff,
-  'light': #d4d0ff,
-  'primary': #502d73,
-  'darker': #2b2040,
-  'darkest': #1c1c1c,
-  'error': #bd0000,
-  'success': #006b00,
+  // Greys
+  'lightest': #f0f0f0,
+  'lighter': #bfbfbf,
+  'darker': #313131,
+  'darkest': #212121,
+  // Colors
+  'secondary': #70bea8,
+  'primary': #ffd166,
+  'accent': #a0c4ff,
+  // Utils
+  'error': #b32d2e
 );
 
 // === Spacers ===
@@ -64,6 +70,19 @@ $font-sizes: ();
   );
 }
 
+$font-sizes: map.merge(
+  $font-sizes,
+  (
+    0: 1.2rem,
+  )
+);
+$font-sizes: map.merge(
+  $font-sizes,
+  (
+    1: 1.4rem,
+  )
+);
+
 // --- Font weights ===
 $font-weights: (
   'light': 300,
@@ -76,6 +95,7 @@ $shadow-size: 1rem;
 $shadow-position: 0 0.5rem;
 $shadows: (
   'transparent': $shadow-position $shadow-size transparent,
+  'filters': inset $shadow-position $shadow-size var(--bt-c-darkest),
 );
 @each $name, $value in $colors {
   $shadows: map.merge(
@@ -101,6 +121,7 @@ $radius: ();
 // === Transitions ===
 $transitions: (
   'default': all 300ms ease-in-out,
+  'filters': all 1s ease-in-out,
 );
 
 // === Borders ===

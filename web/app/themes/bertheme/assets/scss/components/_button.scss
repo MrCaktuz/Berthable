@@ -1,0 +1,18 @@
+@use '../utils/mixins' as *;
+
+.btn {
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--icon {
+    color: transparent;
+  }
+
+  &__icon {
+    display: block;
+    @include size(2rem);
+
+    transition: var(--bt-tr);
+  }
+}
