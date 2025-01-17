@@ -327,8 +327,6 @@ dialog {
   --bt-fs-8: 6.4rem;
   --bt-fs-9: 7.2rem;
   --bt-fs-10: 8rem;
-  --bt-fs-0: 1.2rem;
-  --bt-fs-1: 1.4rem;
   --bt-fw-light: 300;
   --bt-fw-normal: 400;
   --bt-fw-bold: 700;
@@ -560,8 +558,8 @@ p:last-child {
   width: 1.6rem;
   height: 1.6rem;
   background-color: var(--bt-c-primary);
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -695,8 +693,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/close.svg");
           mask-image: url("assets/img/svg/close.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -707,8 +705,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/delete.svg");
           mask-image: url("assets/img/svg/delete.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -719,8 +717,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/filters.svg");
           mask-image: url("assets/img/svg/filters.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -731,8 +729,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/menu.svg");
           mask-image: url("assets/img/svg/menu.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -743,8 +741,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/search.svg");
           mask-image: url("assets/img/svg/search.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
@@ -755,8 +753,8 @@ p:last-child {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/timer.svg");
           mask-image: url("assets/img/svg/timer.svg");
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-position: center;
           mask-position: center;
   -webkit-mask-repeat: no-repeat;

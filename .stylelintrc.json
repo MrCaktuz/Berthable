@@ -11,6 +11,7 @@
     "no-duplicate-selectors": true,
     "font-family-no-duplicate-names": true,
     "color-named": "never",
-    "selector-class-pattern": null
+    "selector-class-pattern": null,
+    "declaration-empty-line-before": "never"
   }
 }

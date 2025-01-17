@@ -62,26 +62,29 @@ $font-families: (
 $base-font-size: 1.6rem;
 $font-sizes: ();
 @each $key, $ratio in $ratios {
-  $font-sizes: map.merge(
-    $font-sizes,
-    (
-      $key: $base-font-size * $ratio,
-    )
-  );
+  @if $key == 0 {
+    $font-sizes: map.merge(
+      $font-sizes,
+      (
+        $key: 1.2rem,
+      )
+    );
+  } @else if $key == 1 {
+    $font-sizes: map.merge(
+      $font-sizes,
+      (
+        $key: 1.4rem,
+      )
+    );
+  } @else {
+    $font-sizes: map.merge(
+      $font-sizes,
+      (
+        $key: $base-font-size * $ratio,
+      )
+    );
+  }
 }
-
-$font-sizes: map.merge(
-  $font-sizes,
-  (
-    0: 1.2rem,
-  )
-);
-$font-sizes: map.merge(
-  $font-sizes,
-  (
-    1: 1.4rem,
-  )
-);
 
 // --- Font weights ===
 $font-weights: (

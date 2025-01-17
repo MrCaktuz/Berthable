@@ -1,0 +1,14 @@
+@use '../utils/variables' as *;
+@use '../utils/mixins' as *;
+
+:root {
+  @include set-variables('c', $colors);
+  @include set-variables('spacer', $spacers);
+  @include set-variables('ff', $font-families);
+  @include set-variables('fs', $font-sizes);
+  @include set-variables('fw', $font-weights);
+  @include set-variables('sh', $shadows);
+  @include set-variables('radius', $radius);
+  @include set-variables('tr', $transitions);
+  @include set-variables('br', $borders);
+}

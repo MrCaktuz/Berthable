@@ -1,0 +1,171 @@
+/* Custom Styles */
+:root {
+  --bt-c-lightest: #f0f0f0;
+  --bt-c-lighter: #bfbfbf;
+  --bt-c-darker: #313131;
+  --bt-c-darkest: #212121;
+  --bt-c-secondary: #70bea8;
+  --bt-c-primary: #ffd166;
+  --bt-c-accent: #a0c4ff;
+  --bt-c-error: #b32d2e;
+  --bt-spacer-0: 0rem;
+  --bt-spacer-05: 0.4rem;
+  --bt-spacer-1: 0.8rem;
+  --bt-spacer-2: 1.6rem;
+  --bt-spacer-3: 2.4rem;
+  --bt-spacer-4: 3.2rem;
+  --bt-spacer-5: 4rem;
+  --bt-spacer-6: 4.8rem;
+  --bt-spacer-7: 5.6rem;
+  --bt-spacer-8: 6.4rem;
+  --bt-spacer-9: 7.2rem;
+  --bt-spacer-10: 8rem;
+  --bt-ff-text: 'Lato', serif;
+  --bt-ff-title: 'Playfair', serif;
+  --bt-fs-0: 0rem;
+  --bt-fs-05: 0.4rem;
+  --bt-fs-1: 0.8rem;
+  --bt-fs-2: 1.6rem;
+  --bt-fs-3: 2.4rem;
+  --bt-fs-4: 3.2rem;
+  --bt-fs-5: 4rem;
+  --bt-fs-6: 4.8rem;
+  --bt-fs-7: 5.6rem;
+  --bt-fs-8: 6.4rem;
+  --bt-fs-9: 7.2rem;
+  --bt-fs-10: 8rem;
+  --bt-fw-light: 300;
+  --bt-fw-normal: 400;
+  --bt-fw-bold: 700;
+  --bt-sh-transparent: 0 0.5rem 1rem transparent;
+  --bt-sh-filters: inset 0 0.5rem 1rem var(--bt-c-darkest);
+  --bt-sh-lightest: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lighter: 0 0.5rem 1rem rgb(191 191 191 / 20%);
+  --bt-sh-darker: 0 0.5rem 1rem rgb(49 49 49 / 20%);
+  --bt-sh-darkest: 0 0.5rem 1rem rgb(33 33 33 / 20%);
+  --bt-sh-secondary: 0 0.5rem 1rem rgb(112 190 168 / 20%);
+  --bt-sh-primary: 0 0.5rem 1rem rgb(255 209 102 / 20%);
+  --bt-sh-accent: 0 0.5rem 1rem rgb(160 196 255 / 20%);
+  --bt-sh-error: 0 0.5rem 1rem rgb(179 45 46 / 20%);
+  --bt-radius-0: 0rem;
+  --bt-radius-05: 0.4rem;
+  --bt-radius-1: 0.8rem;
+  --bt-radius-2: 1.6rem;
+  --bt-radius-3: 2.4rem;
+  --bt-radius-4: 3.2rem;
+  --bt-radius-5: 4rem;
+  --bt-radius-6: 4.8rem;
+  --bt-radius-7: 5.6rem;
+  --bt-radius-8: 6.4rem;
+  --bt-radius-9: 7.2rem;
+  --bt-radius-10: 8rem;
+  --bt-tr: all 300ms ease-in-out;
+  --bt-tr-filters: all 1s ease-in-out;
+  --bt-br: solid 0.1rem transparent;
+  --bt-br-lightest: solid 0.1rem var(--bt-c-lightest);
+  --bt-br-lighter: solid 0.1rem var(--bt-c-lighter);
+  --bt-br-darker: solid 0.1rem var(--bt-c-darker);
+  --bt-br-darkest: solid 0.1rem var(--bt-c-darkest);
+  --bt-br-secondary: solid 0.1rem var(--bt-c-secondary);
+  --bt-br-primary: solid 0.1rem var(--bt-c-primary);
+  --bt-br-accent: solid 0.1rem var(--bt-c-accent);
+  --bt-br-error: solid 0.1rem var(--bt-c-error);
+}
+
+.recipeInfo__section {
+  padding: 1rem 0;
+  border-bottom: var(--bt-br-lighter);
+}
+
+.recipeInfo__section:last-child {
+  border-bottom: 0;
+}
+
+.recipeInfo__title {
+  margin-top: 0;
+}
+
+.recipeInfo__fieldset {
+  flex: 1 1 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.recipeInfo__fieldset input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  padding: 3px 10px;
+}
+
+.recipeInfo__ingredientFields {
+  margin-bottom: 1rem;
+  border-bottom: var(--bt-br-lightest);
+}
+
+.recipeInfo__row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.recipeInfo__row--ingredientName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.recipeInfo__row--ingredientName > .recipeInfo__fieldset {
+  width: auto;
+}
+
+.recipeInfo__deleteBtn {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.2rem;
+  color: transparent;
+  font-size: 0;
+  margin-bottom: 1rem;
+  border: 0;
+  transition: var(--bt-tr);
+  background-color: var(--bt-c-lightest);
+  width: 40px;
+  height: 40px;
+}
+
+.recipeInfo__deleteBtn::after {
+  content: '';
+  flex: 0 0 auto;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bt-c-error);
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-image: url('assets/img/svg/trash.svg');
+  transition: var(--bt-tr);
+}
+
+.recipeInfo__deleteBtn:hover {
+  cursor: pointer;
+  background-color: var(--bt-c-error);
+}
+
+.recipeInfo__deleteBtn:hover::after {
+  background-color: var(--bt-c-lightest);
+}
+
+.recipeInfo__label {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}

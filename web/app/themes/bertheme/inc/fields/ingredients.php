@@ -4,7 +4,7 @@ function custom_recipe_meta_box()
 {
   add_meta_box(
     'recipe_meta_box', // Unique ID
-    'Proportions', // Box Title
+    'Informations complémentaires', // Box Title
     'render_recipe_meta_box', // Callback Function
     'post', // Post Type
     'advanced', // Context
@@ -23,25 +23,28 @@ function render_recipe_meta_box($post)
   ?>
     <div class="recipeInfo">
       <div class="recipeInfo__section">
-        <fieldset class="recipeInfo__fieldset">
-            <label class="recipeInfo__label" for="recipe_duration">Temps de préparation</label>
-            <input type="text" id="recipe_duration" name="recipe_duration" value="<?php echo esc_attr(
-              $duration
-            ); ?>" />
-        </fieldset>
-        <fieldset class="recipeInfo__fieldset">
-            <label class="recipeInfo__label" for="recipe_portion">Portion (nombre de personnes)</label>
-            <input type="number" id="recipe_portion" name="recipe_portion" value="<?php echo esc_attr(
-              $portion
-            ); ?>" min="1" />
-        </fieldset>
+        <h3 class="recipeInfo__title">Préparation</h3>
+        <div class="recipeInfo__row">
+          <fieldset class="recipeInfo__fieldset">
+              <label class="recipeInfo__label" for="recipe_duration">Temps de préparation</label>
+              <input type="text" id="recipe_duration" name="recipe_duration" value="<?php echo esc_attr(
+                $duration
+              ); ?>" />
+          </fieldset>
+          <fieldset class="recipeInfo__fieldset">
+              <label class="recipeInfo__label" for="recipe_portion">Portion (nbr de personnes)</label>
+              <input type="number" id="recipe_portion" name="recipe_portion" value="<?php echo esc_attr(
+                $portion
+              ); ?>" min="1" />
+          </fieldset>
+        </div>
       </div>
       <div class="recipeInfo__section">
         <h3 class="recipeInfo__title">Ingredients</h3>
         <div id="ingredientList">
           <?php foreach ($ingredients as $index => $ingredient): ?>
           <div class="recipeInfo__ingredientFields">
-            <div class="recipeInfo__row">
+            <div class="recipeInfo__row--ingredientName">
               <fieldset class="recipeInfo__fieldset">
                 <label class="recipeInfo__label" for="ingredients[<?php echo $index; ?>][name]">Nom</label>
                 <input
@@ -52,7 +55,7 @@ function render_recipe_meta_box($post)
               </fieldset>
               <button class="recipeInfo__deleteBtn" type="button">Supprimer</button>
             </div>
-            <div class="recipeInfo__row recipeInfo__row--50">
+            <div class="recipeInfo__row">
               <fieldset class="recipeInfo__fieldset">
                 <label class="recipeInfo__label" for="ingredients[<?php echo $index; ?>][quantity]">Quantité</label>
                 <input
@@ -88,7 +91,7 @@ function render_recipe_meta_box($post)
                 const group = document.createElement('div');
                 group.classList.add('recipeInfo__ingredientFields');
                 group.innerHTML = `
-                  <div class="recipeInfo__row">
+                  <div class="recipeInfo__row--ingredientName">
                     <fieldset class="recipeInfo__fieldset">
                       <label class="recipeInfo__label" for="ingredients[${index}][name]">Nom</label>
                       <input
@@ -98,7 +101,7 @@ function render_recipe_meta_box($post)
                     </fieldset>
                     <button class="recipeInfo__deleteBtn" type="button">Supprimer</button>
                   </div>
-                  <div class="recipeInfo__row recipeInfo__row--50">
+                  <div class="recipeInfo__row">
                     <fieldset class="recipeInfo__fieldset">
                       <label class="recipeInfo__label" for="ingredients[${index}][quantity]">Quantité</label>
                       <input

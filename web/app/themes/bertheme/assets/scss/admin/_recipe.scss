@@ -1,0 +1,98 @@
+@use '../utils/mixins' as *;
+
+.recipeInfo {
+  &__section {
+    padding: 1rem 0;
+    border-bottom: var(--bt-br-lighter);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__fieldset {
+    flex: 1 1 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    & input {
+      display: block;
+      width: 100%;
+      font-size: 16px;
+      padding: 3px 10px;
+    }
+  }
+
+  &__ingredientFields {
+    margin-bottom: 1rem;
+    border-bottom: var(--bt-br-lightest);
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  &__row--ingredientName {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 1rem;
+
+    & > .recipeInfo__fieldset {
+      width: auto;
+    }
+  }
+
+  &__deleteBtn {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.2rem;
+    color: transparent;
+    font-size: 0;
+    margin-bottom: 1rem;
+    border: 0;
+    transition: var(--bt-tr);
+    background-color: var(--bt-c-lightest);
+
+    @include size(40px);
+
+    &::after {
+      content: '';
+      flex: 0 0 auto;
+      display: block;
+      @include size(100%);
+      background-color: var(--bt-c-error);
+      @include base-mask;
+      mask-image: url('assets/img/svg/trash.svg');
+      transition: var(--bt-tr);
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: var(--bt-c-error);
+
+      &::after {
+        background-color: var(--bt-c-lightest);
+      }
+    }
+  }
+
+  &__label {
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+  }
+}
