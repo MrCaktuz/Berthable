@@ -78,7 +78,6 @@
         height: 1.6rem;
         background-color: var(--bt-c-primary);
         @include base-mask;
-
         mask-image: url('assets/img/svg/timer.svg');
       }
     }

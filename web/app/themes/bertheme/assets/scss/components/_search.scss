@@ -28,7 +28,6 @@
     align-items: center;
     background-color: var(--bt-c-darker);
     @include size(var(--bt-spacer-7));
-
     border-radius: 0 var(--bt-spacer-7) var(--bt-spacer-7) 0;
     transition: var(--bt-tr);
 
@@ -46,8 +45,6 @@
     &:hover,
     &:active,
     &:focus-visible {
-      // background-color: var(--bt-c-darkest);
-
       & > .btn__icon {
         transform: scale(1.2);
       }

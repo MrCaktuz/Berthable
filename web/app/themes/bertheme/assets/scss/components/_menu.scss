@@ -12,7 +12,6 @@
       left: 50%;
       display: block;
       @include size(2rem);
-
       transform: translate(-50%, -50%);
       transition: var(--bt-tr);
 
