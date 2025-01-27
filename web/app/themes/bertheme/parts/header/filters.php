@@ -21,10 +21,7 @@
                     <i class="checkbox__icon icon--checked icon--secondary"></i>
                   </div>
                   <input class="checkbox__input" type="checkbox" tabindex="-1" name="category[]" value="<?php echo $category->term_id; ?>"
-                  <?php // Vérifier si la catégorie est sélectionnée
-                // Vérifier si la catégorie est sélectionnée
-                // Vérifier si la catégorie est sélectionnée
-                  if (
+                  <?php if (
                     isset($_GET['category']) &&
                     in_array($category->term_id, $_GET['category'])
                   ) {

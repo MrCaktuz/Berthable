@@ -16,3 +16,16 @@ function hide_unwanted_meta_boxes()
   // Remove 'Comments' meta box
   remove_meta_box('commentsdiv', 'post', 'side');
 }
+
+function is_post_vege($postID)
+{
+  $categories = get_the_category($postID);
+  if (!empty($categories)) {
+    foreach ($categories as $category) {
+      if ($category->slug === 'vege') {
+        return esc_html($category->name);
+      }
+    }
+  }
+  return '';
+}

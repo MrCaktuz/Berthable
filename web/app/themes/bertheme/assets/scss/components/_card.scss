@@ -4,10 +4,12 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--bt-spacer-2);
+
   @include mq(md) {
     gap: var(--bt-spacer-3);
     grid-template-columns: 1fr 1fr;
   }
+
   @include mq(xl) {
     gap: var(--bt-spacer-3);
     grid-template-columns: 1fr 1fr 1fr;
@@ -62,33 +64,21 @@
     margin-bottom: 0;
     width: 100%;
 
-    &:first-child {
+    &--start {
       justify-content: flex-start;
 
-      &::before {
-        content: '';
+      .icon {
+        flex: 0 0 auto;
         margin-right: var(--bt-spacer-1);
       }
     }
 
-    &:last-child {
+    &--end {
       justify-content: flex-end;
 
-      &::after {
-        content: '';
-        margin-left: var(--bt-spacer-05);
-      }
-    }
-
-    &.timer {
-      &::before,
-      &::after {
+      .icon {
         flex: 0 0 auto;
-        display: block;
-        @include size(var(--bt-spacer-2));
-        background-color: var(--bt-c-primary);
-        @include base-mask;
-        mask-image: url('assets/img/svg/timer.svg');
+        margin-left: var(--bt-spacer-05);
       }
     }
   }

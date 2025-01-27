@@ -22,3 +22,16 @@
     padding: 0 var(--bt-spacer-8);
   }
 }
+
+.section {
+  margin-top: var(--bt-spacer-10);
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+
+  &__title {
+    font-size: var(--bt-fs-3);
+    font-family: var(--bt-ff-text);
+  }
+}

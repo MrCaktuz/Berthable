@@ -3,7 +3,7 @@
 .btn {
   --bt-btn-radius: var(--bt-radius-4);
   position: relative;
-  padding: var(--bt-spacer-2);
+  padding: var(--bt-spacer-2) var(--bt-spacer-3);
   color: var(--bt-c-lightest);
   background-color: var(--bt-c-darker);
   border-radius: var(--bt-btn-radius);

@@ -13,6 +13,7 @@
 // Sizes
 @each $number, $value in $spacers {
   .icon--#{$number} {
+    display: block;
     @include size(var(--bt-spacer-#{$number}));
   }
 }
