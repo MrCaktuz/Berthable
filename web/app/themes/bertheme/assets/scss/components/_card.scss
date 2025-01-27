@@ -1,18 +1,16 @@
 @use '../utils/mixins' as *;
 
 .card__list {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--bt-spacer-2);
 
-  @include mq(md) {
+  @include mq(sm) {
     gap: var(--bt-spacer-3);
-    grid-template-columns: 1fr 1fr;
   }
 
-  @include mq(xl) {
-    gap: var(--bt-spacer-3);
-    grid-template-columns: 1fr 1fr 1fr;
+  @include mq(lg) {
+    gap: calc(3.25 * var(--bt-spacer-1));
   }
 
   &--empty {
@@ -28,31 +26,59 @@
 
 .card {
   display: flex;
+  flex: 0 0 auto;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
-  padding: var(--bt-spacer-2);
   border-radius: var(--bt-radius-1);
   background-color: var(--bt-c-darker);
   color: var(--bt-c-lighter);
   box-shadow: var(--bt-sh-darkest);
-  margin-top: var(--bt-spacer-5);
+  max-width: calc(4.25 * var(--bt-spacer-10));
+  min-width: calc(10 * var(--bt-spacer-2));
+  width: calc(50% - var(--bt-spacer-2));
+  overflow: hidden;
+
+  @include mq(md) {
+    width: calc(100% / 3 - var(--bt-spacer-2));
+  }
 
   &__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: calc(-1 * var(--bt-spacer-7));
     width: 100%;
+    padding: var(--bt-spacer-1) var(--bt-spacer-2) 0;
+  }
+
+  &__illu {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: var(--bt-radius-1) var(--bt-radius-1) 50% 50%;
+    overflow: hidden;
+    box-shadow: var(--bt-sh-darkest);
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
   }
 
   &__title {
     flex: 1 1 auto;
     color: var(--bt-c-lightest);
-    margin: var(--bt-spacer-1) 0 0 0;
+    padding: var(--bt-spacer-2);
+    margin-bottom: 0;
     width: 100%;
     text-align: center;
     font-size: var(--bt-fs-3);
+    word-break: break-word;
   }
 
   &__info {
@@ -81,16 +107,5 @@
         margin-left: var(--bt-spacer-05);
       }
     }
-  }
-
-  &__img {
-    flex: 0 0 auto;
-    width: 14rem;
-    height: 14rem;
-    border-radius: 50%;
-
-    // transform: translateY(-50%);
-    border: var(--bt-br-darker);
-    border-width: 0.8rem;
   }
 }

@@ -19,13 +19,15 @@
                       <?php echo $vege; ?>
                     <?php endif; ?>
                   </p>
-                  <img class="card__img" src="<?php echo get_the_post_thumbnail_url(); ?>" />
                   <p class="card__info card__info--end">
                     <?php if ($duration): ?>
                       <?php echo $duration; ?>
                       <i class="icon icon--timer icon--2 icon--primary"></i>
                     <?php endif; ?>
                   </p>
+                </div>
+                <div class="card__illu">
+                  <img class="card__img" src="<?php echo get_the_post_thumbnail_url(); ?>" />
                 </div>
               </a>
           <?php
