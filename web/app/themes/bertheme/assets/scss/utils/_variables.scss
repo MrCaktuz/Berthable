@@ -23,7 +23,16 @@ $breakpoints: (
   'xl': 1200px,
   'xxl': 1400px,
 );
-$icons: ('close', 'delete', 'filters', 'menu', 'search', 'timer');
+$icons: (
+  'close',
+  'delete',
+  'filters',
+  'menu',
+  'search',
+  'timer',
+  'checked',
+  'unchecked'
+);
 
 // === Colors ===
 $colors: (
@@ -62,14 +71,14 @@ $font-families: (
 $base-font-size: 1.6rem;
 $font-sizes: ();
 @each $key, $ratio in $ratios {
-  @if $key == 0 {
+  @if $key == '0' {
     $font-sizes: map.merge(
       $font-sizes,
       (
         $key: 1.2rem,
       )
     );
-  } @else if $key == 1 {
+  } @else if $key == '1' {
     $font-sizes: map.merge(
       $font-sizes,
       (

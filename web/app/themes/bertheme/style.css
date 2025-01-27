@@ -315,9 +315,9 @@ dialog {
   --bt-spacer-10: 8rem;
   --bt-ff-text: 'Lato', serif;
   --bt-ff-title: 'Playfair', serif;
-  --bt-fs-0: 0rem;
+  --bt-fs-0: 1.2rem;
   --bt-fs-05: 0.4rem;
-  --bt-fs-1: 0.8rem;
+  --bt-fs-1: 1.4rem;
   --bt-fs-2: 1.6rem;
   --bt-fs-3: 2.4rem;
   --bt-fs-4: 3.2rem;
@@ -441,6 +441,42 @@ p:last-child {
 }
 
 /* Components */
+.btn {
+  --bt-btn-radius: var(--bt-radius-4);
+  position: relative;
+  padding: var(--bt-spacer-2);
+  color: var(--bt-c-lightest);
+  background-color: var(--bt-c-darker);
+  border-radius: var(--bt-btn-radius);
+  border: var(--bt-br);
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
+}
+.btn--square {
+  --bt-btn-radius: var(--bt-radius-2);
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  bottom: 0rem;
+  left: 0rem;
+  border-radius: var(--bt-btn-radius);
+  border: var(--bt-br);
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
+}
+.btn:hover, .btn:active, .btn:focus-visible {
+  outline: none;
+}
+.btn:hover::after, .btn:active::after, .btn:focus-visible::after {
+  border: var(--bt-br-darkest);
+  top: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+}
 .btn:hover {
   cursor: pointer;
 }
@@ -471,6 +507,14 @@ p:last-child {
     gap: var(--bt-spacer-3);
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+.card__list--empty {
+  width: 100%;
+  text-align: center;
+}
+.card__list--emptyMessage {
+  min-width: 100%;
+  margin-bottom: var(--bt-spacer-8);
 }
 
 .card {
@@ -516,6 +560,7 @@ p:last-child {
   margin: var(--bt-spacer-1) 0 0 0;
   width: 100%;
   text-align: center;
+  font-size: var(--bt-fs-3);
 }
 .card__info {
   -webkit-box-flex: 1;
@@ -548,15 +593,15 @@ p:last-child {
 }
 .card__info:last-child::after {
   content: "";
-  margin-left: var(--bt-spacer-1);
+  margin-left: var(--bt-spacer-05);
 }
 .card__info.timer::before, .card__info.timer::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   display: block;
-  width: 1.6rem;
-  height: 1.6rem;
+  width: var(--bt-spacer-2);
+  height: var(--bt-spacer-2);
   background-color: var(--bt-c-primary);
   -webkit-mask-size: contain;
           mask-size: contain;
@@ -578,6 +623,79 @@ p:last-child {
   border-width: 0.8rem;
 }
 
+.checkbox {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 100%;
+  padding: var(--bt-spacer-3);
+  border-radius: var(--bt-radius-2);
+  background-color: var(--bt-c-darker);
+  color: var(--bt-c-lightest);
+}
+@media (min-width: 576px) {
+  .checkbox {
+    width: calc(50% - var(--bt-spacer-2));
+  }
+}
+@media (min-width: 768px) {
+  .checkbox {
+    width: calc(33.3333333333% - var(--bt-spacer-2));
+  }
+}
+@media (min-width: 992px) {
+  .checkbox {
+    width: calc(25% - var(--bt-spacer-2));
+  }
+}
+.checkbox__icons {
+  position: relative;
+  display: block;
+  width: var(--bt-spacer-3);
+  height: var(--bt-spacer-3);
+  margin-right: var(--bt-spacer-2);
+}
+.checkbox__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
+}
+.checkbox__icon.icon--checked {
+  opacity: 0;
+}
+.checkbox__input {
+  position: absolute;
+  top: -100%;
+  opacity: 0;
+}
+.checkbox:has(.checkbox__input:checked) .icon--checked {
+  opacity: 1;
+}
+.checkbox:has(.checkbox__input:checked) .icon--unchecked {
+  opacity: 0;
+}
+.checkbox:hover {
+  cursor: pointer;
+}
+.checkbox:hover .checkbox__icon {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
 .filters {
   display: grid;
   grid-template-rows: 0fr;
@@ -591,6 +709,40 @@ p:last-child {
   height: calc(100vh - 9.6rem + var(--bt-spacer-2));
   height: calc(100dvh - 9.6rem + var(--bt-spacer-2));
   padding: var(--bt-spacer-4) 0;
+}
+.filters__section {
+  margin-top: var(--bt-spacer-4);
+}
+.filters__title {
+  font-size: var(--bt-fs-3);
+  font-family: var(--bt-ff-text);
+}
+.filters__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  gap: var(--bt-spacer-2);
+}
+.filters__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: var(--bt-spacer-8);
+  padding-bottom: var(--bt-spacer-6);
 }
 
 .header:has(.container .header__content .menu__checkbox:checked) .filters {
@@ -761,6 +913,30 @@ p:last-child {
           mask-repeat: no-repeat;
 }
 
+.icon--checked {
+  background-color: var(--bt-c-darkest);
+  -webkit-mask-image: url("assets/img/svg/checked.svg");
+          mask-image: url("assets/img/svg/checked.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.icon--unchecked {
+  background-color: var(--bt-c-darkest);
+  -webkit-mask-image: url("assets/img/svg/unchecked.svg");
+          mask-image: url("assets/img/svg/unchecked.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
 .icon--0 {
   width: var(--bt-spacer-0);
   height: var(--bt-spacer-0);
@@ -857,10 +1033,13 @@ p:last-child {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  margin-top: var(--bt-spacer-8);
+  margin-bottom: var(--bt-spacer-8);
 }
 
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   max-width: 120rem;
   padding: 0 var(--bt-spacer-2);

@@ -22,9 +22,9 @@
   --bt-spacer-10: 8rem;
   --bt-ff-text: 'Lato', serif;
   --bt-ff-title: 'Playfair', serif;
-  --bt-fs-0: 0rem;
+  --bt-fs-0: 1.2rem;
   --bt-fs-05: 0.4rem;
-  --bt-fs-1: 0.8rem;
+  --bt-fs-1: 1.4rem;
   --bt-fs-2: 1.6rem;
   --bt-fs-3: 2.4rem;
   --bt-fs-4: 3.2rem;
@@ -86,9 +86,19 @@
 }
 
 .recipeInfo__fieldset {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   flex: 1 1 auto;
   width: 100%;
+  display: -webkit-box;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   flex-direction: column;
   margin-bottom: 1rem;
 }
@@ -106,16 +116,34 @@
 }
 
 .recipeInfo__row {
+  display: -webkit-box;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
   gap: 1rem;
 }
 
 .recipeInfo__row--ingredientName {
+  display: -webkit-box;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
   align-items: flex-end;
   gap: 1rem;
 }
@@ -125,15 +153,27 @@
 }
 
 .recipeInfo__deleteBtn {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
+  flex: 0 0 auto;
+  display: -webkit-box;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-radius: 0.2rem;
   color: transparent;
   font-size: 0;
   margin-bottom: 1rem;
   border: 0;
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
   transition: var(--bt-tr);
   background-color: var(--bt-c-lightest);
   width: 40px;
@@ -142,15 +182,28 @@
 
 .recipeInfo__deleteBtn::after {
   content: '';
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   flex: 0 0 auto;
   display: block;
   width: 100%;
   height: 100%;
   background-color: var(--bt-c-error);
+  -webkit-mask-size: contain;
   mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
   mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('assets/img/svg/trash.svg');
   mask-image: url('assets/img/svg/trash.svg');
+  mask-image: url('assets/img/svg/trash.svg');
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
   transition: var(--bt-tr);
 }
 

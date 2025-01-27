@@ -12,6 +12,16 @@
     gap: var(--bt-spacer-3);
     grid-template-columns: 1fr 1fr 1fr;
   }
+
+  &--empty {
+    width: 100%;
+    text-align: center;
+  }
+
+  &--emptyMessage {
+    min-width: 100%;
+    margin-bottom: var(--bt-spacer-8);
+  }
 }
 
 .card {
@@ -40,6 +50,7 @@
     margin: var(--bt-spacer-1) 0 0 0;
     width: 100%;
     text-align: center;
+    font-size: var(--bt-fs-3);
   }
 
   &__info {
@@ -65,7 +76,7 @@
 
       &::after {
         content: '';
-        margin-left: var(--bt-spacer-1);
+        margin-left: var(--bt-spacer-05);
       }
     }
 
@@ -74,8 +85,7 @@
       &::after {
         flex: 0 0 auto;
         display: block;
-        width: 1.6rem;
-        height: 1.6rem;
+        @include size(var(--bt-spacer-2));
         background-color: var(--bt-c-primary);
         @include base-mask;
         mask-image: url('assets/img/svg/timer.svg');

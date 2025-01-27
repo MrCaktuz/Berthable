@@ -1,6 +1,39 @@
 @use '../utils/mixins' as *;
 
 .btn {
+  --bt-btn-radius: var(--bt-radius-4);
+  position: relative;
+  padding: var(--bt-spacer-2);
+  color: var(--bt-c-lightest);
+  background-color: var(--bt-c-darker);
+  border-radius: var(--bt-btn-radius);
+  border: var(--bt-br);
+  transition: var(--bt-tr);
+
+  &--square {
+    --bt-btn-radius: var(--bt-radius-2);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--bt-btn-radius);
+    border: var(--bt-br);
+    transition: var(--bt-tr);
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    outline: none;
+
+    &::after {
+      border: var(--bt-br-darkest);
+      inset: -0.5rem;
+    }
+  }
+
   &:hover {
     cursor: pointer;
   }

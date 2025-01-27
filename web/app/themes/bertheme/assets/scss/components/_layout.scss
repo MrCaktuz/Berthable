@@ -2,10 +2,13 @@
 
 .page {
   flex: 1 1 auto;
+  margin-top: var(--bt-spacer-8);
+  margin-bottom: var(--bt-spacer-8);
 }
 
 .container {
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
   max-width: 120rem;
   padding: 0 var(--bt-spacer-2);

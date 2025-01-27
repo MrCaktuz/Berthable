@@ -1,0 +1,69 @@
+@use '../utils/mixins' as *;
+
+.checkbox {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 100%;
+  padding: var(--bt-spacer-3);
+  border-radius: var(--bt-radius-2);
+  background-color: var(--bt-c-darker);
+  color: var(--bt-c-lightest);
+
+  @include mq(sm) {
+    width: calc(100% / 2 - var(--bt-spacer-2));
+  }
+
+  @include mq(md) {
+    width: calc(100% / 3 - var(--bt-spacer-2));
+  }
+
+  @include mq(lg) {
+    width: calc(100% / 4 - var(--bt-spacer-2));
+  }
+
+  &__icons {
+    position: relative;
+    display: block;
+    @include size(var(--bt-spacer-3));
+    margin-right: var(--bt-spacer-2);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include size(100%);
+    transition: var(--bt-tr);
+
+    &.icon--checked {
+      opacity: 0;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    top: -100%;
+    opacity: 0;
+  }
+
+  &:has(.checkbox__input:checked) {
+    .icon--checked {
+      opacity: 1;
+    }
+
+    .icon--unchecked {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .checkbox__icon {
+      transform: scale(1.2);
+    }
+  }
+}

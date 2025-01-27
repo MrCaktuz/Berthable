@@ -3,36 +3,69 @@
     <div class="filters__content">
       <h2 class="srOnly">Filtres disponibles</h2>
       <div class="container">
-        <form class="filterForm" role="search" method="get" id="filterForm" action="<?php echo home_url(
+        <form class="filters__form" role="search" method="get" id="filterForm" action="<?php echo home_url(
           '/'
         ); ?>">
           <?php include BT_THEME_DIR . '/parts/header/search.php'; ?>
     
-          <!-- <?php
-          $categories = get_categories();
-          if ($categories): ?>
-            <section class="filters__section">
-              <h3>Catégories</h3>
-              <ul class="">
-                <li class="">
-                  
-                  <a class="" href="./">
-                    Toutes
-                  </a>
-                </li>
-                <?php foreach ($categories as $category): ?>
-                  <li class="">
-                    <a class="" href="./?cat=<?php echo esc_attr(
-                      $category->term_id
-                    ); ?>">
-                      <?php echo esc_html($category->name); ?>
-                    </a>
-                  </li>
-                <?php endforeach; ?>
-              </ul>
-            </section>
-          <?php endif;
-          ?> -->
+          <section class="filters__section">
+            <h3 class="filters__title">Catégories</h3>
+            <div class="filters__group">
+              <?php
+              // Récupérer les catégories
+              $categories = get_categories(['hide_empty' => false]);
+              foreach ($categories as $category): ?>
+                <label class="checkbox">
+                  <div class="checkbox__icons">
+                    <i class="checkbox__icon icon--unchecked icon--primary"></i>
+                    <i class="checkbox__icon icon--checked icon--secondary"></i>
+                  </div>
+                  <input class="checkbox__input" type="checkbox" tabindex="-1" name="category[]" value="<?php echo $category->term_id; ?>"
+                  <?php // Vérifier si la catégorie est sélectionnée
+                // Vérifier si la catégorie est sélectionnée
+                // Vérifier si la catégorie est sélectionnée
+                  if (
+                    isset($_GET['category']) &&
+                    in_array($category->term_id, $_GET['category'])
+                  ) {
+                    echo 'checked';
+                  } ?>>
+                  <?php echo esc_html($category->name); ?>
+                </label>
+              <?php endforeach;
+              ?>
+            </div>
+          </section>
+
+          <section class="filters__section">
+            <h3 class="filters__title">Auteurs</h3>
+            <div class="filters__group">
+              <?php
+              $authors = get_users_with_posts();
+              foreach ($authors as $author): ?>
+                <label class="checkbox">
+                  <div class="checkbox__icons">
+                    <i class="checkbox__icon icon--unchecked icon--primary"></i>
+                    <i class="checkbox__icon icon--checked icon--secondary"></i>
+                  </div>
+                  <input class="checkbox__input"  type="checkbox" tabindex="-1" name="author[]" value="<?php echo $author->ID; ?>"
+                  <?php if (
+                    isset($_GET['author']) &&
+                    in_array($author->ID, $_GET['author'])
+                  ) {
+                    echo 'checked';
+                  } ?>>
+                  <?php echo esc_html($author->display_name); ?>
+                </label>
+              <?php endforeach;
+              ?>
+            </div>
+          </section>
+
+          <div class="filters__footer" >
+            <a class="btn" href="/?s=" tabindex="-1">Réinitialiser</a>
+            <button class="btn" type="submit" tabindex="-1">Appliquer</button>
+          </div>
         </form>
       </div>
     </div>
