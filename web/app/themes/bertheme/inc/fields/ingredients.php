@@ -170,7 +170,7 @@ function save_recipe_meta_box($post_id)
     $sanitized_ingredients = array_map(function ($ingredient) {
       return [
         'name' => sanitize_text_field($ingredient['name']),
-        'quantity' => intval($ingredient['quantity']),
+        'quantity' => $ingredient['quantity'] + 0,
         'unit' => sanitize_text_field($ingredient['unit']),
       ];
     }, $_POST['ingredients']);

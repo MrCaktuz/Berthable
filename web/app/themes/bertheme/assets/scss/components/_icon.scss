@@ -1,6 +1,11 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
 
+*[class^='icon'] {
+  flex: 0 0 auto;
+  @include size(100%);
+}
+
 // Icons
 @each $iconName in $icons {
   .icon--#{$iconName} {

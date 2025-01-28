@@ -5,13 +5,10 @@ const initScripts = () => {
   import(baseURL + 'init-header.js').then((initHeaderModule) => {
     initHeaderModule.default(baseURL);
   });
-};
-const test = () => {
-  // header module
-  import(baseURL + 'init-header.js').then((initHeaderModule) => {
-    initHeaderModule.default(baseURL);
+  // portion module
+  import(baseURL + 'init-portion.js').then((initPortionModule) => {
+    initPortionModule.default(baseURL);
   });
 };
 
 window.addEventListener('load', initScripts);
-window.addEventListener('load', test);

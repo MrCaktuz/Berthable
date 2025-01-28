@@ -26,7 +26,9 @@ $breakpoints: (
 $icons: (
   'checked',
   'close',
+  'lessPortion',
   'menu',
+  'morePortion',
   'search',
   'timer',
   'trash',
@@ -37,6 +39,8 @@ $icons: (
 // === Colors ===
 $colors: (
   // Greys
+  'lightest-30': rgba(#f0f0f0, 0.3),
+  'lightest-50': rgba(#f0f0f0, 0.5),
   'lightest': #f0f0f0,
   'lighter': #bfbfbf,
   'darker': #313131,
