@@ -1,14 +1,15 @@
 /* Custom Styles */
 :root {
+  --bt-c-white: #ffffff;
   --bt-c-lightest-30: rgb(240 240 240 / 30%);
   --bt-c-lightest-50: rgb(240 240 240 / 50%);
+  --bt-c-lightest-80: rgb(240 240 240 / 80%);
   --bt-c-lightest: #f0f0f0;
   --bt-c-lighter: #bfbfbf;
   --bt-c-darker: #313131;
   --bt-c-darkest: #212121;
   --bt-c-secondary: #70bea8;
   --bt-c-primary: #ffd166;
-  --bt-c-accent: #a0c4ff;
   --bt-c-error: #b32d2e;
   --bt-spacer-0: 0rem;
   --bt-spacer-05: 0.4rem;
@@ -22,8 +23,9 @@
   --bt-spacer-8: 6.4rem;
   --bt-spacer-9: 7.2rem;
   --bt-spacer-10: 8rem;
-  --bt-ff-text: 'Lato', serif;
-  --bt-ff-title: 'Playfair', serif;
+  --bt-ff-text: quicksand, serif;
+  --bt-ff-title: 'Indie Flower', serif;
+  --bt-ff-brand: megrim, serif;
   --bt-fs-0: 1.2rem;
   --bt-fs-05: 0.4rem;
   --bt-fs-1: 1.4rem;
@@ -36,20 +38,26 @@
   --bt-fs-8: 6.4rem;
   --bt-fs-9: 7.2rem;
   --bt-fs-10: 8rem;
-  --bt-fw-light: 300;
-  --bt-fw-normal: 400;
-  --bt-fw-bold: 700;
+  --bt-fw-1: 100;
+  --bt-fw-2: 200;
+  --bt-fw-3: 300;
+  --bt-fw-4: 400;
+  --bt-fw-5: 500;
+  --bt-fw-6: 600;
+  --bt-fw-7: 700;
+  --bt-fw-8: 800;
   --bt-sh-transparent: 0 0.5rem 1rem transparent;
   --bt-sh-filters: inset 0 0.5rem 1rem var(--bt-c-darkest);
+  --bt-sh-white: 0 0.5rem 1rem rgb(255 255 255 / 20%);
   --bt-sh-lightest-30: 0 0.5rem 1rem rgb(240 240 240 / 20%);
   --bt-sh-lightest-50: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lightest-80: 0 0.5rem 1rem rgb(240 240 240 / 20%);
   --bt-sh-lightest: 0 0.5rem 1rem rgb(240 240 240 / 20%);
   --bt-sh-lighter: 0 0.5rem 1rem rgb(191 191 191 / 20%);
   --bt-sh-darker: 0 0.5rem 1rem rgb(49 49 49 / 20%);
   --bt-sh-darkest: 0 0.5rem 1rem rgb(33 33 33 / 20%);
   --bt-sh-secondary: 0 0.5rem 1rem rgb(112 190 168 / 20%);
   --bt-sh-primary: 0 0.5rem 1rem rgb(255 209 102 / 20%);
-  --bt-sh-accent: 0 0.5rem 1rem rgb(160 196 255 / 20%);
   --bt-sh-error: 0 0.5rem 1rem rgb(179 45 46 / 20%);
   --bt-radius-0: 0rem;
   --bt-radius-05: 0.4rem;
@@ -66,15 +74,16 @@
   --bt-tr: all 300ms ease-in-out;
   --bt-tr-filters: all 1s ease-in-out;
   --bt-br: solid 0.1rem transparent;
+  --bt-br-white: solid 0.1rem var(--bt-c-white);
   --bt-br-lightest-30: solid 0.1rem var(--bt-c-lightest-30);
   --bt-br-lightest-50: solid 0.1rem var(--bt-c-lightest-50);
+  --bt-br-lightest-80: solid 0.1rem var(--bt-c-lightest-80);
   --bt-br-lightest: solid 0.1rem var(--bt-c-lightest);
   --bt-br-lighter: solid 0.1rem var(--bt-c-lighter);
   --bt-br-darker: solid 0.1rem var(--bt-c-darker);
   --bt-br-darkest: solid 0.1rem var(--bt-c-darkest);
   --bt-br-secondary: solid 0.1rem var(--bt-c-secondary);
   --bt-br-primary: solid 0.1rem var(--bt-c-primary);
-  --bt-br-accent: solid 0.1rem var(--bt-c-accent);
   --bt-br-error: solid 0.1rem var(--bt-c-error);
 }
 

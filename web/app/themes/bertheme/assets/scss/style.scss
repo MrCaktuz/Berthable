@@ -15,6 +15,7 @@
 
 /* Global styles */
 @use './globals/base';
+@use './globals/themes';
 @use './globals/utils';
 
 /* Components */
@@ -25,7 +26,6 @@
 @use './components/header';
 @use './components/icon';
 @use './components/layout';
-@use './components/link';
 @use './components/menu';
 @use './components/recipe';
 @use './components/search';

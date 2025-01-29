@@ -38,9 +38,11 @@ $icons: (
 
 // === Colors ===
 $colors: (
+  'white': #ffffff,
   // Greys
   'lightest-30': rgba(#f0f0f0, 0.3),
   'lightest-50': rgba(#f0f0f0, 0.5),
+  'lightest-80': rgba(#f0f0f0, 0.8),
   'lightest': #f0f0f0,
   'lighter': #bfbfbf,
   'darker': #313131,
@@ -48,9 +50,8 @@ $colors: (
   // Colors
   'secondary': #70bea8,
   'primary': #ffd166,
-  'accent': #a0c4ff,
   // Utils
-  'error': #b32d2e
+  'error': #b32d2e,
 );
 
 // === Spacers ===
@@ -67,8 +68,9 @@ $spacers: ();
 
 // --- Font families ===
 $font-families: (
-  'text': "'Lato', serif",
-  'title': "'Playfair', serif",
+  'text': 'Quicksand, serif',
+  'title': "'Indie Flower', serif",
+  'brand': 'Megrim, serif',
 );
 
 // --- Font sizes ===
@@ -101,9 +103,14 @@ $font-sizes: ();
 
 // --- Font weights ===
 $font-weights: (
-  'light': 300,
-  'normal': 400,
-  'bold': 700,
+  '1': 100,
+  '2': 200,
+  '3': 300,
+  '4': 400,
+  '5': 500,
+  '6': 600,
+  '7': 700,
+  '8': 800,
 );
 
 // === Shadows ===

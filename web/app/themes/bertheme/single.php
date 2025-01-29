@@ -57,22 +57,22 @@
           $portion = get_post_meta(get_the_ID(), '_recipe_portion', true);
           if ($portion): ?>
             <div class="recipe__portionContainer">
-              <button class="btn btn--light btn--combined btn--s btn--portion" id="btnLessPortion">
-                <i class="btn__icon icon--lessPortion icon--darkest"></i>
+              <button class="btn btn--combined btn--s btn--portion" id="btnLessPortion">
+                <i class="btn__icon icon--lessPortion"></i>
                 <span class="srOnly">Moins de portions</span>
               </button>
               <p class="recipe__portion">
                 <span data-base="<?php echo $portion; ?>" id="portionValue"><?php echo $portion; ?></span>
                 <span> portions</span>
               </p>
-              <button class="btn btn--light btn--combined btn--s btn--portion" id="btnMorePortion">
-                <i class="btn__icon icon--morePortion icon--darkest"></i>
+              <button class="btn btn--combined btn--s btn--portion" id="btnMorePortion">
+                <i class="btn__icon icon--morePortion"></i>
                 <span class="srOnly">Plus de portions</span>
               </button>
             </div>
           <?php endif;
           ?>
-          <ul>
+          <ul class="recipe__ingredientList">
             <?php foreach ($ingredients as $ingredient): ?>
               <li class="recipe__ingredient">
                 <p>

@@ -6,7 +6,7 @@
         <form class="filters__form" role="search" method="get" id="filterForm" action="<?php echo home_url(
           '/'
         ); ?>">
-          <?php include BT_THEME_DIR . '/parts/header/search.php'; ?>
+          <?php include BT_THEME_DIR . '/parts/header/searchForm.php'; ?>
     
           <section class="filters__section">
             <h3 class="filters__title">Catégories</h3>
@@ -20,7 +20,7 @@
                     <i class="checkbox__icon icon--unchecked icon--primary"></i>
                     <i class="checkbox__icon icon--checked icon--secondary"></i>
                   </div>
-                  <input class="checkbox__input" type="checkbox" tabindex="-1" name="category[]" value="<?php echo $category->term_id; ?>"
+                  <input class="checkbox__input" type="checkbox" name="category[]" value="<?php echo $category->term_id; ?>"
                   <?php if (
                     isset($_GET['category']) &&
                     in_array($category->term_id, $_GET['category'])
@@ -45,7 +45,7 @@
                     <i class="checkbox__icon icon--unchecked icon--primary"></i>
                     <i class="checkbox__icon icon--checked icon--secondary"></i>
                   </div>
-                  <input class="checkbox__input"  type="checkbox" tabindex="-1" name="author[]" value="<?php echo $author->ID; ?>"
+                  <input class="checkbox__input"  type="checkbox" name="author[]" value="<?php echo $author->ID; ?>"
                   <?php if (
                     isset($_GET['author']) &&
                     in_array($author->ID, $_GET['author'])
@@ -60,8 +60,8 @@
           </section>
 
           <div class="filters__footer" >
-            <a class="btn" href="/?s=" tabindex="-1">Réinitialiser</a>
-            <button class="btn" type="submit" tabindex="-1">Appliquer</button>
+            <a class="btn" href="/?s=">Réinitialiser</a>
+            <button class="btn" type="submit">Appliquer</button>
           </div>
         </form>
       </div>

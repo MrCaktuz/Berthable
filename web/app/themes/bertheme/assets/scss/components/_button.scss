@@ -2,37 +2,14 @@
 
 .btn {
   --bt-btn-radius: var(--bt-radius-4);
-  position: relative;
   padding: var(--bt-spacer-2) var(--bt-spacer-3);
-  color: var(--bt-c-lightest);
-  background-color: var(--bt-c-darker);
+  color: var(--bt-th-c-btn);
+  background-color: var(--bt-th-bg-btn);
   border-radius: var(--bt-btn-radius);
   border: var(--bt-br);
   transition: var(--bt-tr);
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--bt-btn-radius);
-    border: var(--bt-br);
-    transition: var(--bt-tr);
-  }
-
-  &:hover,
-  &:active,
-  &:focus-visible {
-    outline: none;
-
-    &::after {
-      border: var(--bt-br-darkest);
-      inset: -0.5rem;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-  }
+  @include hover(var(--bt-btn-radius));
 
   &--xs {
     padding: var(--bt-spacer-05) calc(1.5 * var(--bt-spacer-1));
@@ -43,28 +20,38 @@
     padding: var(--bt-spacer-1) var(--bt-spacer-2);
   }
 
-  &--light {
-    color: var(--bt-c-darkest);
-    background-color: var(--bt-c-lightest-30);
+  &__icon,
+  .btn__icon {
+    display: block;
+    @include size(var(--bt-spacer-3));
+    transition: var(--bt-tr);
+    background-color: var(--bt-th-c-btn);
+  }
 
-    &:hover,
-    &:active,
-    &:focus-visible {
-      &::after {
-        border: var(--bt-br-lightest);
-      }
+  &--light {
+    color: var(--bt-th-c-btn-light);
+    background-color: var(--bt-th-bg-btn-light);
+
+    &::after {
+      border: var(--bt-th-br-btn-light-hover);
+    }
+
+    & .btn__icon {
+      background-color: var(--bt-th-c-btn-light);
     }
   }
 
   &--combined {
-    --bt-btn-radius: 0;
+    --bt-btn-radius: var(--bt-radius-05);
 
     &:first-of-type {
-      --bt-btn-radius: var(--bt-radius-4) 0 0 var(--bt-radius-4);
+      --bt-btn-radius: var(--bt-radius-4) var(--bt-radius-05)
+        var(--bt-radius-05) var(--bt-radius-4);
     }
 
     &:last-of-type {
-      --bt-btn-radius: 0 var(--bt-radius-4) var(--bt-radius-4) 0;
+      --bt-btn-radius: var(--bt-radius-05) var(--bt-radius-4) var(--bt-radius-4)
+        var(--bt-radius-05);
     }
   }
 
@@ -75,11 +62,5 @@
   &--icon {
     flex: 0 0 auto;
     color: transparent;
-  }
-
-  &__icon {
-    display: block;
-    @include size(2rem);
-    transition: var(--bt-tr);
   }
 }

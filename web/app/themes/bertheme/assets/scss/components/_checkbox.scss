@@ -9,8 +9,10 @@
   width: 100%;
   padding: var(--bt-spacer-3);
   border-radius: var(--bt-radius-2);
-  background-color: var(--bt-c-darker);
-  color: var(--bt-c-lightest);
+  background-color: var(--bt-th-bg-checkbox);
+  color: var(--bt-th-c-checkbox);
+
+  @include hover(var(--bt-radius-2));
 
   @include mq(sm) {
     width: calc(100% / 2 - var(--bt-spacer-2));
@@ -37,6 +39,7 @@
     left: 0;
     @include size(100%);
     transition: var(--bt-tr);
+    box-shadow: var(--bt-sh-darkest);
 
     &.icon--checked {
       opacity: 0;
@@ -60,10 +63,20 @@
   }
 
   &:hover {
-    cursor: pointer;
+    .checkbox__icon {
+      transform: scale(1.1);
+    }
+  }
+
+  &:has(.checkbox__input:active),
+  &:has(.checkbox__input:focus-visible) {
+    &::after {
+      opacity: 1;
+      inset: -0.5rem;
+    }
 
     .checkbox__icon {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
 }

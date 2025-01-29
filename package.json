@@ -21,8 +21,8 @@
     "postcss:watch": "postcss --watch web/app/themes/bertheme/*css --dir web/app/themes/bertheme/",
     "sass:build": "sass web/app/themes/bertheme/assets/scss/:web/app/themes/bertheme --no-source-map",
     "sass:watch": "sass --watch web/app/themes/bertheme/assets/scss/:web/app/themes/bertheme/ --no-source-map",
-    "style:check": "stylelint --allow-empty-input '**/*.{css,scss}'",
-    "style:fix": "stylelint --fix --allow-empty-input '**/*.{css,scss}'",
+    "style:check": "stylelint --allow-empty-input '**/*.{sass,scss}'",
+    "style:fix": "stylelint --fix --allow-empty-input '**/*.{sass,scss}'",
     "style:build": "npm run sass:build && npm run postcss:build",
     "style:watch": "npm run sass:watch & npm run postcss:watch"
   },

@@ -37,10 +37,33 @@
   max-width: calc(4.25 * var(--bt-spacer-10));
   min-width: calc(10 * var(--bt-spacer-2));
   width: calc(50% - var(--bt-spacer-2));
-  overflow: hidden;
+  @include hover(var(--bt-radius-1), var(--bt-th-br-card-hover));
 
   @include mq(md) {
     width: calc(100% / 3 - var(--bt-spacer-2));
+  }
+
+  &::after {
+    opacity: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    transition: var(--bt-tr);
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    .card__img {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
   }
 
   &__content {
@@ -57,17 +80,7 @@
     padding-bottom: 100%;
     border-radius: var(--bt-radius-1) var(--bt-radius-1) 50% 50%;
     overflow: hidden;
-    box-shadow: var(--bt-sh-darkest);
-  }
-
-  &__img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    transform: translate(-50%, -50%);
+    background-color: var(--bt-c-darkest);
   }
 
   &__title {

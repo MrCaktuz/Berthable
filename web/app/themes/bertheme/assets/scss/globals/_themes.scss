@@ -1,0 +1,52 @@
+// Dark theme
+:root {
+  --bt-th-c-default: var(--bt-c-darkest);
+  --bt-th-bg: var(--bt-c-lighter);
+  --bt-th-bg-header: var(--bt-c-lightest);
+  --bt-th-bg-menu-btn: var(--bt-c-darkest);
+  --bt-th-c-btn: var(--bt-c-darkest);
+  --bt-th-bg-btn: var(--bt-c-primary);
+  --bt-th-br-btn-hover: var(--bt-br-primary);
+  --bt-th-c-btn-light: var(--bt-c-darkest);
+  --bt-th-bg-btn-light: var(--bt-c-white);
+  --bt-th-br-btn-light-hover: var(--bt-br-primary);
+  --bt-th-bg-portion: var(--bt-c-lightest-50);
+  --bt-th-br-portion: var(--bt-br-primary);
+  --bt-th-c-recipe-decoration: var(--bt-c-primary);
+  --bt-th-br-box: var(--bt-br-primary);
+  --bt-th-bg-box: var(--bt-c-lightest-50);
+  --bt-th-br-card-hover: var(--bt-br-darker);
+  --bt-th-c-search: var(--bt-c-darkest);
+  --bt-th-bg-search: var(--bt-c-white);
+  --bt-th-br-search: var(--bt-br-white);
+  --bt-th-c-checkbox: var(--bt-c-darkest);
+  --bt-th-bg-checkbox: var(--bt-c-white);
+}
+
+.dark {
+  --bt-th-c-default: var(--bt-c-lightest);
+  --bt-th-bg: var(--bt-c-darkest);
+  --bt-th-bg-header: var(--bt-c-darker);
+  --bt-th-bg-menu-btn: var(--bt-c-lightest);
+  --bt-th-c-btn: var(--bt-c-lightest);
+  --bt-th-bg-btn: var(--bt-c-darker);
+  --bt-th-br-btn-hover: var(--bt-br-primary);
+  --bt-th-c-btn-light: var(--bt-c-lightest);
+  --bt-th-bg-btn-light: var(--bt-c-lightest-30);
+  --bt-th-br-btn-light-hover: var(--bt-br-lightest);
+  --bt-th-bg-portion: var(--bt-br-transparent);
+  --bt-th-br-portion: var(--bt-br-lightest-50);
+  --bt-th-c-recipe-decoration: var(--bt-c-primary);
+  --bt-th-br-box: var(--bt-br-darker);
+  --bt-th-bg-box: var(--bt-c-darker);
+  --bt-th-br-card-hover: var(--bt-br-darker);
+  --bt-th-c-search: var(--bt-c-lightest);
+  --bt-th-bg-search: var(--bt-c-darke);
+  --bt-th-br-search: var(--bt-br-darker);
+  --bt-th-c-checkbox: var(--bt-c-lightest);
+  --bt-th-bg-checkbox: var(--bt-c-darker);
+
+  body {
+    background-image: none;
+  }
+}

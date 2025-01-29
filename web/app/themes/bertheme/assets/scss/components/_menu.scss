@@ -5,6 +5,7 @@
     position: relative;
     display: block;
     @include size(var(--bt-spacer-3));
+    @include hover;
 
     .btn__icon {
       position: absolute;
@@ -14,6 +15,7 @@
       @include size(2rem);
       transform: translate(-50%, -50%);
       transition: var(--bt-tr);
+      background-color: var(--bt-th-bg-menu-btn);
 
       &.icon--close {
         opacity: 0;
@@ -40,13 +42,9 @@
 
     &:active,
     &:focus-visible {
-      & + .btn--icon {
-        transform: scale(1.2);
-
-        &::after {
-          opacity: 1;
-          transform: scale(0.8);
-        }
+      & + .btn--icon::after {
+        opacity: 1;
+        inset: -0.5rem;
       }
     }
   }
