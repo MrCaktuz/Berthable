@@ -13,7 +13,7 @@ const portionModule = ({
     $portionValue.innerHTML = iNewValue;
 
     Array.from($ingredients).forEach(($ingredient) => {
-      const iNewQuantity = parseInt($ingredient.dataset.base) * iRatio;
+      const iNewQuantity = parseFloat($ingredient.dataset.base) * iRatio;
       $ingredient.innerHTML = formatQuantity(iNewQuantity);
     });
   };
@@ -31,6 +31,7 @@ const portionModule = ({
   $btnLessPortion.addEventListener('click', () =>
     onLessPortion(parseInt($portionValue.innerHTML))
   );
+
   $btnMorePortion.addEventListener('click', () =>
     onMorePortion(parseInt($portionValue.innerHTML))
   );
