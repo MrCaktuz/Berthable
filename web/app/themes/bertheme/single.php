@@ -38,7 +38,13 @@
           <?php endif;
           ?>
         </div>
-        <img class="recipe__img" src="<?php echo get_the_post_thumbnail_url(); ?>" />
+        <?php if (get_the_post_thumbnail_url()) {
+          $thumbnail = get_the_post_thumbnail_url();
+        } else {
+          $thumbnail =
+            get_template_directory_uri() . '/assets/img/default-recipe.jpeg';
+        } ?>
+        <img class="recipe__img" src="<?php echo $thumbnail; ?>" />
       </div>
       <?php
       $ingredients = get_post_meta(get_the_ID(), '_ingredients', true);

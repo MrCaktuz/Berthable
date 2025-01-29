@@ -20,6 +20,13 @@ class BT_Menu
       $submenu['edit.php'][10][0] = 'Ajouter une recette'; // Index 10 corresponds to "Add New"
     }
     add_action('admin_menu', 'change_posts_menu_label');
+
+    function remove_comments_menu_page()
+    {
+      remove_menu_page('edit-comments.php');
+    }
+
+    add_action('admin_menu', 'remove_comments_menu_page');
   }
 
   public static function get_instance()

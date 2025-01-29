@@ -38,7 +38,14 @@
                 </p>
               </div>
               <div class="card__illu">
-                <img class="card__img" src="<?php echo get_the_post_thumbnail_url(); ?>" />
+                <?php if (get_the_post_thumbnail_url()) {
+                  $thumbnail = get_the_post_thumbnail_url();
+                } else {
+                  $thumbnail =
+                    get_template_directory_uri() .
+                    '/assets/img/default-recipe.jpeg';
+                } ?>
+                <img class="card__img" src="<?php echo $thumbnail; ?>" />
               </div>
             </a>
           <?php
