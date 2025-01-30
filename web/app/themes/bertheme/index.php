@@ -6,18 +6,19 @@
   foreach ($selectedCategories as $categorySlug):
     $category = get_category_by_slug($categorySlug); ?>
     <?php
-    $latest = new WP_Query([
+    $recipes = new WP_Query([
       'post_type' => 'post',
       'posts_per_page' => 3,
       'category_name' => $categorySlug,
+      'orderby' => 'rand',
     ]);
-    if ($latest->have_posts()): ?>
+    if ($recipes->have_posts()): ?>
       <section class="section">
         <h2 class="section__title"><?php echo $category->name; ?></h2>
         <div class="card__list">
-          <?php while ($latest->have_posts()):
+          <?php while ($recipes->have_posts()):
 
-            $latest->the_post();
+            $recipes->the_post();
             $vege = is_post_vege(get_the_ID());
             $duration = get_post_meta(get_the_ID(), '_recipe_duration', true);
             ?>
