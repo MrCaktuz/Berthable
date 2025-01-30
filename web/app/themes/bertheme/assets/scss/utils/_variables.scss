@@ -119,6 +119,9 @@ $shadow-position: 0 0.5rem;
 $shadows: (
   'transparent': $shadow-position $shadow-size transparent,
   'filters': inset $shadow-position $shadow-size var(--bt-c-darkest),
+  'link': '0 0 0 0.1rem var(--bt-c-lightest), 0 0 0 0rem var(--bt-c-secondary)',
+  'link-hover':
+    '0 0 0 0.4rem var(--bt-c-lightest), 0 0 0 0.5rem var(--bt-c-secondary)',
 );
 @each $name, $value in $colors {
   $shadows: map.merge(
@@ -161,3 +164,36 @@ $borders: (
     )
   );
 }
+
+$titles: (
+  'h1': (
+    'max': var(--bt-fs-6),
+    'min': var(--bt-fs-5),
+    'weight': var(--bt-fw-1),
+  ),
+  'h2': (
+    'max': var(--bt-fs-5),
+    'min': var(--bt-fs-4),
+    'weight': var(--bt-fw-1),
+  ),
+  'h3': (
+    'max': var(--bt-fs-4),
+    'min': var(--bt-fs-3),
+    'weight': var(--bt-fw-7),
+  ),
+  'h4': (
+    'max': var(--bt-fs-2),
+    'min': var(--bt-fs-2),
+    'weight': var(--bt-fw-7),
+  ),
+  'h5': (
+    'max': var(--bt-fs-2),
+    'min': var(--bt-fs-2),
+    'weight': var(--bt-fw-7),
+  ),
+  'h6': (
+    'max': var(--bt-fs-2),
+    'min': var(--bt-fs-2),
+    'weight': var(--bt-fw-7),
+  ),
+);

@@ -53,6 +53,10 @@
       --bt-btn-radius: var(--bt-radius-05) var(--bt-radius-4) var(--bt-radius-4)
         var(--bt-radius-05);
     }
+
+    &:only-child {
+      --bt-btn-radius: var(--bt-radius-4);
+    }
   }
 
   &--portion {

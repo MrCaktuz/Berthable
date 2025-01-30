@@ -9,10 +9,6 @@
     gap: var(--bt-spacer-3);
   }
 
-  @include mq(lg) {
-    gap: calc(3.25 * var(--bt-spacer-1));
-  }
-
   &--empty {
     width: 100%;
     text-align: center;
@@ -90,8 +86,12 @@
     margin-bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: var(--bt-fs-3);
     word-break: break-word;
+    font-size: var(--bt-fs-3);
+
+    @include mq(md) {
+      font-size: var(--bt-fs-4);
+    }
   }
 
   &__info {

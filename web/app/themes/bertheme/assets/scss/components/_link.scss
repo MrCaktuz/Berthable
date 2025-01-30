@@ -1,0 +1,18 @@
+.link {
+  transition: var(--bt-tr);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  color: var(--bt-c-secondary);
+  text-decoration-color: var(--bt-c-secondary);
+  font-weight: 500;
+  border-radius: var(--bt-radius-05);
+  box-shadow: var(--bt-sh-link);
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    outline: none;
+    text-decoration-color: transparent;
+    box-shadow: var(--bt-sh-link-hover);
+  }
+}

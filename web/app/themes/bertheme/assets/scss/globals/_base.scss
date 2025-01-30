@@ -1,5 +1,6 @@
 @use '../utils/variables' as *;
 @use '../utils/mixins' as *;
+@use 'SASS:map';
 
 :root {
   @include set-variables('c', $colors);
@@ -31,7 +32,7 @@ body {
   background-repeat: repeat;
   background-color: var(--bt-th-bg);
   background-image: url('assets/img/hexellence_pattern.png');
-  background-size: 150px;
+  background-size: 15rem;
 }
 
 h1,
@@ -39,16 +40,20 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  margin: 0 0 1em;
+h6 {
   font-family: var(--bt-ff-title);
-  font-weight: var(--bt-fw-1);
+  margin: 0 0 1em;
+}
+
+@each $name, $values in $titles {
+  #{$name} {
+    font-size: map.get($values, 'min');
+    font-weight: map.get($values, 'weight');
+
+    @include mq(md) {
+      font-size: map.get($values, 'max');
+    }
+  }
 }
 
 p {

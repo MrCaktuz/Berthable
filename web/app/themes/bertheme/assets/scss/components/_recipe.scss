@@ -6,12 +6,7 @@
     justify-content: flex-start;
     align-items: center;
     gap: var(--bt-spacer-1);
-    font-size: var(--bt-fs-4);
     margin-bottom: 0;
-
-    @include mq(sm) {
-      font-size: var(--bt-fs-5);
-    }
   }
 
   &__infoContainer {
@@ -121,7 +116,6 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    font-size: var(--bt-fs-3);
 
     &::after {
       content: '';
@@ -146,6 +140,7 @@
 
   &__description {
     margin-top: var(--bt-spacer-4);
+    line-height: 1.5;
     @include box;
   }
 }
