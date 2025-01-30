@@ -16,6 +16,7 @@ class Bertheme
     include BT_INC_DIR . '/roles.php';
     include BT_INC_DIR . '/scripts.php';
     include BT_INC_DIR . '/search.php';
+    include BT_INC_DIR . '/wysiwyg.php';
 
     // Hide admin tool bar on website.
     add_filter('show_admin_bar', '__return_false');
