@@ -4,6 +4,8 @@ function custom_search_ingredients($query)
   if ($query->is_search() && $query->is_main_query() && !is_admin()) {
     // Restreindre la recherche uniquement aux articles (post)
     $query->set('post_type', 'post');
+    // Rend le resultat trié de mainière random.
+    $query->set('orderby', 'rand');
 
     // Ajoutez le filtre pour les auteurs si un ou plusieurs auteurs sont sélectionnés
     if (!empty($_GET['author']) && is_array($_GET['author'])) {
@@ -63,6 +65,7 @@ function get_users_with_posts()
         SELECT DISTINCT post_author 
         FROM {$wpdb->posts} 
         WHERE post_status = 'publish'
+        AND post_type = 'post'
     ");
 
   // If no users found, return an empty array
