@@ -160,6 +160,9 @@ if (
   $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https'
 ) {
   $_SERVER['HTTPS'] = 'on';
+  define('FORCE_SSL_ADMIN', true);
+} else {
+  define('FORCE_SSL_ADMIN', false);
 }
 
 $env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
