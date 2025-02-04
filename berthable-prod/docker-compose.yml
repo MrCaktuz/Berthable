@@ -1,75 +1,61 @@
 version: '24.0'
 
-services:
-  nginx:
-    build:
-      context: .
-      dockerfile: nginx.dockerfile
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - .:/var/www/html:delegated
-    depends_on:
-      - php
-      - mysql
-    networks:
-      - internal
+networks:
+  web:
+    external: true
 
+services:
   mysql:
     image: mysql:latest
     restart: unless-stopped
-    env_file: .env
+    env_file: ../.env
     environment:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - "dbdata:/var/lib/mysql"
+      - "dbprod:/var/lib/mysql"
     ports:
       - "3306:3306"
     networks:
-      - internal
+      - web
 
   php: 
     build:
-      context: .
+      context: ../
       dockerfile: php.dockerfile
     restart: unless-stopped
     volumes:
-      - .:/var/www/html:delegated
+      - ../:/var/www/html:delegated
+    ports:
+      - "81:80"
     depends_on:
       - mysql
     networks:
-      - internal
+      - web
 
   wp:
     build:
-      context: .
+      context: ../
       dockerfile: php.dockerfile
     volumes:
-      - .:/var/www/html:delegated
+      - ../:/var/www/html:delegated
     entrypoint: ["wp", "--allow-root"]
     networks:
-      - internal
+      - web
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    env_file: .env
+    env_file: ../.env
     environment:
-      PMA_HOST: mysql
+      PMA_HOST: ${DB_HOST}
       PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     ports:
-      - "8081:80"
+      - "8080:80"
     networks:
-      - internal
+      - web
 
 volumes:
-  dbdata:
-
-networks:
-  internal:
-    driver: bridge
+  dbprod:
