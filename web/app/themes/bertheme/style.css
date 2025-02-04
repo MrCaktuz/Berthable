@@ -70,7 +70,7 @@ abbr[title] {
 /* Add the correct font weight in Chrome, Edge, and Safari. */
 b,
 strong {
-  font-weight: var(--bt-fw-5);
+  font-weight: var(--bt-fw-7);
 }
 
 /* Remove the default font size for sub and sup. */
@@ -1594,6 +1594,38 @@ p:last-child {
   border-radius: var(--bt-radius-1);
   border: var(--bt-th-br-box);
   background-color: var(--bt-th-bg-box);
+}
+.recipe__description h1,
+.recipe__description h2,
+.recipe__description h3,
+.recipe__description h4,
+.recipe__description h5,
+.recipe__description h6 {
+  margin: 1.5em 0 0.5em;
+}
+.recipe__description h1:first-child,
+.recipe__description h2:first-child,
+.recipe__description h3:first-child,
+.recipe__description h4:first-child,
+.recipe__description h5:first-child,
+.recipe__description h6:first-child {
+  margin: 0 0 0.5em;
+}
+.recipe__description ol,
+.recipe__description ul {
+  margin-left: var(--bt-spacer-2);
+  margin-bottom: var(--bt-spacer-2);
+}
+.recipe__description ol li,
+.recipe__description ul li {
+  margin-bottom: var(--bt-spacer-1);
+  padding-left: var(--bt-spacer-1);
+}
+.recipe__description ol {
+  list-style-type: decimal;
+}
+.recipe__description ul {
+  list-style-type: circle;
 }
 
 .searchSection {

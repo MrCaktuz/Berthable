@@ -142,5 +142,37 @@
     margin-top: var(--bt-spacer-4);
     line-height: 1.5;
     @include box;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 1.5em 0 0.5em;
+
+      &:first-child {
+        margin: 0 0 0.5em;
+      }
+    }
+
+    ol,
+    ul {
+      margin-left: var(--bt-spacer-2);
+      margin-bottom: var(--bt-spacer-2);
+
+      li {
+        margin-bottom: var(--bt-spacer-1);
+        padding-left: var(--bt-spacer-1);
+      }
+    }
+
+    ol {
+      list-style-type: decimal;
+    }
+
+    ul {
+      list-style-type: circle;
+    }
   }
 }
