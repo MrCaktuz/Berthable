@@ -23,9 +23,9 @@
 .card {
   display: flex;
   flex: 0 0 auto;
-  flex-direction: column-reverse;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border-radius: var(--bt-radius-1);
   background-color: var(--bt-c-darker);
   color: var(--bt-c-lighter);
@@ -41,6 +41,10 @@
 
   &::after {
     opacity: 1;
+  }
+
+  &__group {
+    width: 100%;
   }
 
   &__img {
@@ -80,7 +84,7 @@
   }
 
   &__title {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
     color: var(--bt-c-lightest);
     padding: var(--bt-spacer-2);
     margin-bottom: 0;
