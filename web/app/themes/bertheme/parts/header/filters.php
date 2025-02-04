@@ -13,7 +13,7 @@
             <div class="filters__group">
               <?php
               // Récupérer les catégories
-              $categories = get_categories(['hide_empty' => false]);
+              $categories = get_categories(['hide_empty' => true]);
               foreach ($categories as $category): ?>
                 <label class="checkbox">
                   <div class="checkbox__icons">
