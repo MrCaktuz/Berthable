@@ -47,4 +47,19 @@
     font-family: var(--bt-ff-brand);
     font-size: var(--bt-fs-4);
   }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--bt-spacer-3);
+
+    .btn {
+      display: none;
+
+      @include mq(sm) {
+        display: block;
+      }
+    }
+  }
 }

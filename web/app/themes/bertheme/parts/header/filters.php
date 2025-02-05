@@ -1,6 +1,9 @@
 <section class="filters">
   <div class="filters__wrapper">
     <div class="filters__content">
+      <div class="filters__allRecipes container">
+        <?php include BT_THEME_DIR . '/parts/btnAllRecipes.php'; ?>
+      </div>
       <h2 class="srOnly">Filtres disponibles</h2>
       <div class="container">
         <form class="filters__form" role="search" method="get" id="filterForm" action="<?php echo home_url(

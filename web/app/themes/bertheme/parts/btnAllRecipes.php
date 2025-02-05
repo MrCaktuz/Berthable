@@ -1,0 +1,1 @@
+<a class="btn btn--s" href="/?s=">Toutes nos recettes</a>

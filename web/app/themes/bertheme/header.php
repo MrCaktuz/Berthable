@@ -18,7 +18,10 @@
     <div class="container">
       <div class="header__content">
         <?php include BT_THEME_DIR . '/parts/header/brand.php'; ?>
-        <?php include BT_THEME_DIR . '/parts/header/menu.php'; ?>
+        <div class="header__nav">
+          <?php include BT_THEME_DIR . '/parts/btnAllRecipes.php'; ?>
+          <?php include BT_THEME_DIR . '/parts/header/menu.php'; ?>
+        </div>
       </div>
     </div>
     <?php include BT_THEME_DIR . '/parts/header/filters.php'; ?>

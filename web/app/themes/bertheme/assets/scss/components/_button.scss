@@ -8,6 +8,7 @@
   border-radius: var(--bt-btn-radius);
   border: var(--bt-br);
   transition: var(--bt-tr);
+  text-align: center;
 
   @include hover(var(--bt-btn-radius));
 

@@ -564,6 +564,7 @@ p:last-child {
   border: var(--bt-br);
   -webkit-transition: var(--bt-tr);
   transition: var(--bt-tr);
+  text-align: center;
   position: relative;
 }
 .btn::after {
@@ -925,6 +926,20 @@ p:last-child {
   height: calc(100dvh - 9.6rem + var(--bt-spacer-2));
   padding: var(--bt-spacer-4) 0;
 }
+.filters__allRecipes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: var(--bt-spacer-6);
+}
+.filters__allRecipes .btn {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .filters__allRecipes {
+    display: none;
+  }
+}
 .filters__section {
   margin-top: var(--bt-spacer-4);
 }
@@ -1046,6 +1061,26 @@ p:last-child {
 .header__name {
   font-family: var(--bt-ff-brand);
   font-size: var(--bt-fs-4);
+}
+.header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: var(--bt-spacer-3);
+}
+.header__nav .btn {
+  display: none;
+}
+@media (min-width: 576px) {
+  .header__nav .btn {
+    display: block;
+  }
 }
 
 *[class^=icon] {
