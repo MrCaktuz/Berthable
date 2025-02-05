@@ -1,4 +1,4 @@
-"<?php include BT_THEME_DIR . '/header.php'; ?>"
+<?php include BT_THEME_DIR . '/header.php'; ?>
 
 <main class="page container">
   <?php
