@@ -1061,6 +1061,7 @@ p:last-child {
 .header__name {
   font-family: var(--bt-ff-brand);
   font-size: var(--bt-fs-4);
+  font-weight: var(--bt-fw-6);
 }
 .header__nav {
   display: -webkit-box;
@@ -1089,6 +1090,18 @@ p:last-child {
           flex: 0 0 auto;
   width: 100%;
   height: 100%;
+}
+
+.icon--author {
+  background-color: var(--bt-c-darkest);
+  -webkit-mask-image: url("assets/img/svg/author.svg");
+          mask-image: url("assets/img/svg/author.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
 }
 
 .icon--checked {
@@ -1444,64 +1457,17 @@ p:last-child {
 }
 
 .recipe__title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: var(--bt-spacer-1);
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   margin-bottom: 0;
-}
-.recipe__infoContainer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  z-index: 1;
-}
-.recipe__info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  min-width: var(--bt-spacer-4);
-  min-height: var(--bt-spacer-4);
-  height: auto;
-  padding: var(--bt-spacer-1);
-  color: var(--bt-c-lightest);
-  background-color: var(--bt-c-darker);
-  gap: var(--bt-spacer-05);
-  font-size: var(--bt-fs-1);
-}
-.recipe__info:first-child {
-  border-radius: var(--bt-radius-1) 0;
-}
-.recipe__info:last-child {
-  border-radius: 0 var(--bt-radius-1);
 }
 .recipe__categories {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: var(--bt-spacer-05);
 }
 .recipe__section {
@@ -1551,6 +1517,42 @@ p:last-child {
     width: 50%;
     padding-bottom: 50%;
   }
+}
+.recipe__info {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: var(--bt-spacer-4);
+  min-height: var(--bt-spacer-4);
+  height: auto;
+  padding: var(--bt-spacer-1);
+  color: var(--bt-c-lightest);
+  background-color: var(--bt-c-darker);
+  gap: var(--bt-spacer-05);
+  font-size: var(--bt-fs-1);
+  z-index: 1;
+}
+.recipe__info--vege {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 var(--bt-radius-1);
+}
+.recipe__info--duration {
+  top: 0;
+  right: 0;
+  border-radius: 0 var(--bt-radius-1);
+}
+.recipe__info--author {
+  top: 0;
+  left: 0;
+  border-radius: var(--bt-radius-1) 0;
 }
 .recipe__img {
   position: absolute;

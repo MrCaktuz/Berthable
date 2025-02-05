@@ -18,25 +18,30 @@
 
     <div class="recipe__section recipe__section--split">
       <div class="recipe__imgContainer">
-        <div class="recipe__infoContainer">
-          <?php if (is_post_vege(get_the_ID())): ?>
-            <div class="recipe__info recipe__vege">
-              <i class="icon icon--vege icon--secondary"></i>
-            </div>
-          <?php else: ?>
-            <div></div>
-          <?php endif; ?>
-          <?php
-          $duration = get_post_meta(get_the_ID(), '_recipe_duration', true);
-          if ($duration): ?>
-            <div class="recipe__info recipe__duration">
-              <?php echo $duration; ?>
-              <i class="icon icon--timer icon--2 icon--primary"></i>
-            </div>
-          <?php else: ?>
-            <div></div>
-          <?php endif;
-          ?>
+        <?php if (is_post_vege(get_the_ID())): ?>
+          <div class="recipe__info recipe__info--vege">
+            <i class="icon icon--vege icon--2 icon--secondary"></i>
+          </div>
+        <?php else: ?>
+          <div></div>
+        <?php endif; ?>
+        <?php
+        $duration = get_post_meta(get_the_ID(), '_recipe_duration', true);
+        if ($duration): ?>
+          <div class="recipe__info recipe__info--duration">
+            <?php echo $duration; ?>
+            <i class="icon icon--timer icon--2 icon--primary"></i>
+          </div>
+        <?php else: ?>
+          <div></div>
+        <?php endif;
+        ?>
+        <div class="recipe__info recipe__info--author">
+          <i class="icon icon--author icon--2 icon--primary"></i>
+          <?php echo get_the_author_meta(
+            'display_name',
+            get_post(get_the_ID())->post_author
+          ); ?>
         </div>
         <?php if (get_the_post_thumbnail_url()) {
           $thumbnail = get_the_post_thumbnail_url();
@@ -98,7 +103,9 @@
     <div class="recipe__section">
       <div>
         <h2 class="recipe__subtitle">Préparation</h2>
-        <div class="recipe__description"><?php the_content(); ?></div>
+        <div class="recipe__description">
+          <?php the_content(); ?>
+        </div>
       </div>
     </div>
   </div>

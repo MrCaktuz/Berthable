@@ -13,7 +13,7 @@
     ]);
     if ($recipes->have_posts()): ?>
       <section class="section">
-        <h2 class="section__title">Nos dernières <?php echo $category->name; ?></h2>
+        <h2 class="section__title">Les dernières <?php echo $category->name; ?></h2>
         <div class="card__list">
           <?php while ($recipes->have_posts()) {
             $recipes->the_post();
@@ -26,7 +26,7 @@
               <img class="card__img" src="<?php echo get_template_directory_uri() .
                 '/assets/img/more-recipes.jpeg'; ?>" />
             </div>
-            <h2 class="card__title">Voir tous nos <?php echo $category->name; ?></h2>
+            <h2 class="card__title">Voir tous les <?php echo $category->name; ?></h2>
           </a>
         </div>
       </section>
