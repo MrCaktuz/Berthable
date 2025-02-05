@@ -1,58 +1,33 @@
-<?php include BT_THEME_DIR . '/header.php'; ?>
+"<?php include BT_THEME_DIR . '/header.php'; ?>"
 
 <main class="page container">
   <?php
-  $selectedCategories = ['plat', 'vege', 'dessert'];
+  $selectedCategories = ['plats-principaux', 'vege', 'desserts'];
   foreach ($selectedCategories as $categorySlug):
     $category = get_category_by_slug($categorySlug); ?>
     <?php
     $recipes = new WP_Query([
       'post_type' => 'post',
-      'posts_per_page' => 3,
+      'posts_per_page' => 5,
       'category_name' => $categorySlug,
-      'orderby' => 'rand',
     ]);
     if ($recipes->have_posts()): ?>
       <section class="section">
-        <h2 class="section__title"><?php echo $category->name; ?></h2>
+        <h2 class="section__title">Nos dernières <?php echo $category->name; ?></h2>
         <div class="card__list">
-          <?php while ($recipes->have_posts()):
-
+          <?php while ($recipes->have_posts()) {
             $recipes->the_post();
             $vege = is_post_vege(get_the_ID());
             $duration = get_post_meta(get_the_ID(), '_recipe_duration', true);
-            ?>
-            <a class="card" href="<?php the_permalink(); ?>" >
-              <div class="card__group">
-                <div class="card__illu">
-                  <?php if (get_the_post_thumbnail_url()) {
-                    $thumbnail = get_the_post_thumbnail_url();
-                  } else {
-                    $thumbnail =
-                      get_template_directory_uri() .
-                      '/assets/img/default-recipe.jpeg';
-                  } ?>
-                  <img class="card__img" src="<?php echo $thumbnail; ?>" />
-                </div>
-                <div class="card__content">
-                  <p class="card__info card__info--start">
-                    <?php if ($vege): ?>
-                      <i class="icon icon--vege icon--2 icon--secondary"></i>
-                      <?php echo $vege; ?>
-                    <?php endif; ?>
-                  </p>
-                  <p class="card__info card__info--end">
-                    <?php if ($duration): ?>
-                      <?php echo $duration; ?>
-                      <i class="icon icon--timer icon--2 icon--primary"></i>
-                    <?php endif; ?>
-                  </p>
-                </div>
-              </div>
-              <h2 class="card__title"><?php the_title(); ?></h2>
-            </a>
-          <?php
-          endwhile; ?>
+            include BT_THEME_DIR . '/parts/card.php';
+          } ?>
+          <a class="card" href="/?s=&category[]=<?php echo $category->term_id; ?>" >
+            <div class="card__illu">
+              <img class="card__img" src="<?php echo get_template_directory_uri() .
+                '/assets/img/more-recipes.jpeg'; ?>" />
+            </div>
+            <h2 class="card__title">Voir tous nos <?php echo $category->name; ?></h2>
+          </a>
         </div>
       </section>
     <?php endif;
