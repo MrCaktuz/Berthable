@@ -13,7 +13,7 @@
       <p class="card__info card__info--start">
         <?php if ($vege): ?>
           <i class="icon icon--vege icon--2 icon--secondary"></i>
-          <?php echo $vege; ?>
+          Végé
         <?php endif; ?>
       </p>
       <p class="card__info card__info--end">
