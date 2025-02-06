@@ -832,6 +832,9 @@ p:last-child {
   color: var(--bt-th-c-checkbox);
   position: relative;
 }
+.checkbox span::first-letter {
+  text-transform: capitalize;
+}
 .checkbox::after {
   content: "";
   position: absolute;
@@ -1469,6 +1472,9 @@ p:last-child {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: var(--bt-spacer-05);
+}
+.recipe__categories .btn::first-letter {
+  text-transform: capitalize;
 }
 .recipe__section {
   margin-top: var(--bt-spacer-4);

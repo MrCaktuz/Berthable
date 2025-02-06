@@ -12,6 +12,10 @@
   background-color: var(--bt-th-bg-checkbox);
   color: var(--bt-th-c-checkbox);
 
+  span::first-letter {
+    text-transform: capitalize;
+  }
+
   @include hover(var(--bt-radius-2));
 
   @include mq(sm) {

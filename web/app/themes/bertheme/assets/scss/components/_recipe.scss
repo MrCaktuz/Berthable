@@ -10,6 +10,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: var(--bt-spacer-05);
+
+    .btn::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__section {

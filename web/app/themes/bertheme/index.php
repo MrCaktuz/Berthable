@@ -13,7 +13,7 @@
     ]);
     if ($recipes->have_posts()): ?>
       <section class="section">
-        <h2 class="section__title">Les dernières <?php echo $category->name; ?></h2>
+        <h2 class="section__title">Les derniers <?php echo $category->name; ?></h2>
         <div class="card__list">
           <?php while ($recipes->have_posts()) {
             $recipes->the_post();

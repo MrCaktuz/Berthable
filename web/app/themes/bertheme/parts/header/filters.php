@@ -30,7 +30,7 @@
                   ) {
                     echo 'checked';
                   } ?>>
-                  <?php echo esc_html($category->name); ?>
+                  <span><?php echo esc_html($category->name); ?></span>
                 </label>
               <?php endforeach;
               ?>
