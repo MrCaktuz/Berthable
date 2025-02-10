@@ -82,16 +82,19 @@
               <li class="recipe__ingredient">
                 <p>
                   <strong>
-                    <?php echo esc_html($ingredient['name']); ?> : 
+                    <?php echo esc_html($ingredient['name']); ?> 
                   </strong>
-                  <span class="recipe__quantity" data-base="<?php echo esc_html(
-                    $ingredient['quantity']
-                  ); ?>">
-                    <?php echo esc_html($ingredient['quantity']); ?>
-                  </span>
-                  <span class="recipe__unit">
-                    <?php echo esc_html($ingredient['unit']); ?>
-                  </span>
+                  <?php if ($ingredient['quantity']): ?>
+                    <strong> : </strong>
+                    <span class="recipe__quantity" data-base="<?php echo esc_html(
+                      $ingredient['quantity']
+                    ); ?>">
+                      <?php echo esc_html($ingredient['quantity']); ?>
+                    </span>
+                    <span class="recipe__unit">
+                      <?php echo esc_html($ingredient['unit']); ?>
+                    </span>
+                  <?php endif; ?>
                 </p>
               </li>
             <?php endforeach; ?>

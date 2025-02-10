@@ -167,13 +167,22 @@ function save_recipe_meta_box($post_id)
 
   // Save ingredients
   if (isset($_POST['ingredients']) && is_array($_POST['ingredients'])) {
+    $sanitized_ingredients = array_filter($_POST['ingredients'], function (
+      $ingredient
+    ) {
+      return !empty(trim($ingredient['name'] ?? '')); // Ignore ingredients with an empty name
+    });
+
     $sanitized_ingredients = array_map(function ($ingredient) {
       return [
         'name' => sanitize_text_field($ingredient['name']),
-        'quantity' => $ingredient['quantity'] + 0,
+        'quantity' =>
+          $ingredient['quantity'] !== ''
+            ? floatval($ingredient['quantity'])
+            : null,
         'unit' => sanitize_text_field($ingredient['unit']),
       ];
-    }, $_POST['ingredients']);
+    }, $sanitized_ingredients);
 
     update_post_meta($post_id, '_ingredients', $sanitized_ingredients);
   } else {
