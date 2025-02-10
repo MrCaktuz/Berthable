@@ -23,7 +23,7 @@ const portionModule = ({
   };
 
   const onLessPortion = (currentValue) => {
-    if (parseInt($portionValue.innerHTML) > 0) {
+    if (parseInt($portionValue.innerHTML) > 0 && currentValue > 1) {
       onUpdatePoriton(currentValue - 1);
     }
   };
