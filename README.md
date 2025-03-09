@@ -54,4 +54,4 @@ npm run style:watch
 
 ## Next changes
 
-- Send an email to be notified when an author published a new recipe.
+- ...
