@@ -51,3 +51,8 @@ After that you can watch styles with this
 ```
 npm run style:watch
 ```
+
+## Next changes
+
+- Make titles not bold anymore.
+- Send an email to be notified when an author published a new recipe.
