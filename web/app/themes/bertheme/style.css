@@ -438,7 +438,7 @@ h2 {
 
 h3 {
   font-size: var(--bt-fs-3);
-  font-weight: var(--bt-fw-7);
+  font-weight: var(--bt-fw-1);
 }
 @media (min-width: 768px) {
   h3 {
@@ -448,7 +448,7 @@ h3 {
 
 h4 {
   font-size: var(--bt-fs-2);
-  font-weight: var(--bt-fw-7);
+  font-weight: var(--bt-fw-1);
 }
 @media (min-width: 768px) {
   h4 {
@@ -458,7 +458,7 @@ h4 {
 
 h5 {
   font-size: var(--bt-fs-2);
-  font-weight: var(--bt-fw-7);
+  font-weight: var(--bt-fw-1);
 }
 @media (min-width: 768px) {
   h5 {
@@ -468,7 +468,7 @@ h5 {
 
 h6 {
   font-size: var(--bt-fs-2);
-  font-weight: var(--bt-fw-7);
+  font-weight: var(--bt-fw-1);
 }
 @media (min-width: 768px) {
   h6 {

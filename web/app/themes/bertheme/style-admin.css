@@ -1,9 +1,9 @@
 /* Custom Styles */
 :root {
   --bt-c-white: #ffffff;
-  --bt-c-lightest-30: rgba(240, 240, 240, 0.3);
-  --bt-c-lightest-50: rgba(240, 240, 240, 0.5);
-  --bt-c-lightest-80: rgba(240, 240, 240, 0.8);
+  --bt-c-lightest-30: rgb(240 240 240 / 30%);
+  --bt-c-lightest-50: rgb(240 240 240 / 50%);
+  --bt-c-lightest-80: rgb(240 240 240 / 80%);
   --bt-c-lightest: #f0f0f0;
   --bt-c-lighter: #bfbfbf;
   --bt-c-darker: #313131;
@@ -23,9 +23,9 @@
   --bt-spacer-8: 6.4rem;
   --bt-spacer-9: 7.2rem;
   --bt-spacer-10: 8rem;
-  --bt-ff-text: Quicksand, serif;
+  --bt-ff-text: quicksand, serif;
   --bt-ff-title: 'Indie Flower', serif;
-  --bt-ff-brand: Megrim, serif;
+  --bt-ff-brand: megrim, serif;
   --bt-fs-0: 1.2rem;
   --bt-fs-05: 0.4rem;
   --bt-fs-1: 1.4rem;
@@ -52,17 +52,17 @@
     0 0 0 0rem var(--bt-c-secondary);
   --bt-sh-link-hover: 0 0 0 0.4rem var(--bt-c-lightest),
     0 0 0 0.5rem var(--bt-c-secondary);
-  --bt-sh-white: 0 0.5rem 1rem rgba(255, 255, 255, 0.2);
-  --bt-sh-lightest-30: 0 0.5rem 1rem rgba(240, 240, 240, 0.2);
-  --bt-sh-lightest-50: 0 0.5rem 1rem rgba(240, 240, 240, 0.2);
-  --bt-sh-lightest-80: 0 0.5rem 1rem rgba(240, 240, 240, 0.2);
-  --bt-sh-lightest: 0 0.5rem 1rem rgba(240, 240, 240, 0.2);
-  --bt-sh-lighter: 0 0.5rem 1rem rgba(191, 191, 191, 0.2);
-  --bt-sh-darker: 0 0.5rem 1rem rgba(49, 49, 49, 0.2);
-  --bt-sh-darkest: 0 0.5rem 1rem rgba(33, 33, 33, 0.2);
-  --bt-sh-secondary: 0 0.5rem 1rem rgba(112, 190, 168, 0.2);
-  --bt-sh-primary: 0 0.5rem 1rem rgba(255, 209, 102, 0.2);
-  --bt-sh-error: 0 0.5rem 1rem rgba(179, 45, 46, 0.2);
+  --bt-sh-white: 0 0.5rem 1rem rgb(255 255 255 / 20%);
+  --bt-sh-lightest-30: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lightest-50: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lightest-80: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lightest: 0 0.5rem 1rem rgb(240 240 240 / 20%);
+  --bt-sh-lighter: 0 0.5rem 1rem rgb(191 191 191 / 20%);
+  --bt-sh-darker: 0 0.5rem 1rem rgb(49 49 49 / 20%);
+  --bt-sh-darkest: 0 0.5rem 1rem rgb(33 33 33 / 20%);
+  --bt-sh-secondary: 0 0.5rem 1rem rgb(112 190 168 / 20%);
+  --bt-sh-primary: 0 0.5rem 1rem rgb(255 209 102 / 20%);
+  --bt-sh-error: 0 0.5rem 1rem rgb(179 45 46 / 20%);
   --bt-radius-0: 0rem;
   --bt-radius-05: 0.4rem;
   --bt-radius-1: 0.8rem;
@@ -95,43 +95,46 @@
   padding: 1rem 0;
   border-bottom: var(--bt-br-lighter);
 }
+
 .recipeInfo__section:last-child {
   border-bottom: 0;
 }
+
 .recipeInfo__title {
   margin-top: 0;
 }
+
 .recipeInfo__fieldset {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   width: 100%;
   display: -webkit-box;
-  display: -ms-flexbox;
+  display: flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
   margin-bottom: 1rem;
 }
+
 .recipeInfo__fieldset input {
   display: block;
   width: 100%;
   font-size: 16px;
   padding: 3px 10px;
 }
+
 .recipeInfo__ingredientFields {
   margin-bottom: 1rem;
   border-bottom: var(--bt-br-lightest);
 }
+
 .recipeInfo__row {
   display: -webkit-box;
-  display: -ms-flexbox;
+  display: flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-  -ms-flex-direction: row;
   flex-direction: row;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -141,9 +144,10 @@
   align-items: flex-end;
   gap: 1rem;
 }
+
 .recipeInfo__row--ingredientName {
   display: -webkit-box;
-  display: -ms-flexbox;
+  display: flexbox;
   display: flex;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -153,15 +157,16 @@
   align-items: flex-end;
   gap: 1rem;
 }
+
 .recipeInfo__row--ingredientName > .recipeInfo__fieldset {
   width: auto;
 }
+
 .recipeInfo__deleteBtn {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   display: -webkit-box;
-  display: -ms-flexbox;
+  display: flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -174,39 +179,36 @@
   font-size: 0;
   margin-bottom: 1rem;
   border: 0;
-  -webkit-transition: var(--bt-tr);
   transition: var(--bt-tr);
   background-color: var(--bt-c-lightest);
   width: 40px;
   height: 40px;
 }
+
 .recipeInfo__deleteBtn::after {
   content: '';
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   display: block;
   width: 100%;
   height: 100%;
   background-color: var(--bt-c-error);
-  -webkit-mask-size: contain;
   mask-size: contain;
-  -webkit-mask-position: center;
   mask-position: center;
-  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-image: url('assets/img/svg/trash.svg');
   mask-image: url('assets/img/svg/trash.svg');
-  -webkit-transition: var(--bt-tr);
   transition: var(--bt-tr);
 }
+
 .recipeInfo__deleteBtn:hover {
   cursor: pointer;
   background-color: var(--bt-c-error);
 }
+
 .recipeInfo__deleteBtn:hover::after {
   background-color: var(--bt-c-lightest);
 }
+
 .recipeInfo__label {
   display: block;
   width: 100%;
