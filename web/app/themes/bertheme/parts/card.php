@@ -1,8 +1,8 @@
 <a class="card" href="<?php the_permalink(); ?>" >
   <div class="card__group">
     <div class="card__illu">
-      <?php if (get_the_post_thumbnail_url()) {
-        $thumbnail = get_the_post_thumbnail_url();
+      <?php if (get_the_post_thumbnail_url(null, 'custom_square')) {
+        $thumbnail = get_the_post_thumbnail_url(null, 'custom_square');
       } else {
         $thumbnail =
           get_template_directory_uri() . '/assets/img/default-recipe.jpeg';

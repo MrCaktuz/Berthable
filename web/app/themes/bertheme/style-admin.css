@@ -106,13 +106,19 @@
 
 .recipeInfo__fieldset {
   -webkit-box-flex: 1;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
   flex: 1 1 auto;
   width: 100%;
   display: -webkit-box;
   display: flexbox;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   flex-direction: column;
   margin-bottom: 1rem;
 }
@@ -132,9 +138,13 @@
 .recipeInfo__row {
   display: -webkit-box;
   display: flexbox;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
   flex-direction: row;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -148,6 +158,8 @@
 .recipeInfo__row--ingredientName {
   display: -webkit-box;
   display: flexbox;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
@@ -164,9 +176,13 @@
 
 .recipeInfo__deleteBtn {
   -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   flex: 0 0 auto;
   display: -webkit-box;
   display: flexbox;
+  display: flexbox;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
@@ -179,6 +195,8 @@
   font-size: 0;
   margin-bottom: 1rem;
   border: 0;
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
   transition: var(--bt-tr);
   background-color: var(--bt-c-lightest);
   width: 40px;
@@ -188,15 +206,27 @@
 .recipeInfo__deleteBtn::after {
   content: '';
   -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   flex: 0 0 auto;
   display: block;
   width: 100%;
   height: 100%;
   background-color: var(--bt-c-error);
+  -webkit-mask-size: contain;
   mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
   mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-image: url('assets/img/svg/trash.svg');
   mask-image: url('assets/img/svg/trash.svg');
+  mask-image: url('assets/img/svg/trash.svg');
+  -webkit-transition: var(--bt-tr);
+  transition: var(--bt-tr);
   transition: var(--bt-tr);
 }
 
