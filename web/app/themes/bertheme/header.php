@@ -12,6 +12,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Megrim&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <!-- WP generated heads -->
   <?php wp_head(); ?>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri() .
+    '/assets/favicon/favicon-96x96.png'; ?>" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="<?php echo get_template_directory_uri() .
+    '/assets/favicon/favicon.svg'; ?>" />
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri() .
+    '/assets/favicon/favicon.ico'; ?>" />
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri() .
+    '/assets/favicon/apple-touch-icon.png'; ?>" />
+  <meta name="apple-mobile-web-app-title" content="Berthable" />
+  <link rel="manifest" href="<?php echo get_template_directory_uri() .
+    '/assets/favicon/site.webmanifest'; ?>" />
 </head>
 <body>
   <header class="header">

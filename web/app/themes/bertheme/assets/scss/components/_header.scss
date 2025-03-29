@@ -25,8 +25,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--bt-spacer-3);
-    padding-bottom: var(--bt-spacer-3);
+    padding: var(--bt-spacer-2) 0;
   }
 
   &__brand {
@@ -39,8 +38,10 @@
 
   &__logo {
     display: block;
-    margin-right: var(--bt-spacer-2);
-    @include size(4.8rem);
+    @include size(auto, 4.8rem);
+    @include mq(sm) {
+      height: 6.8rem;
+    }
   }
 
   &__name {
