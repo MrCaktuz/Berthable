@@ -112,7 +112,6 @@
   width: 100%;
   display: -webkit-box;
   display: flexbox;
-  display: flexbox;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
@@ -135,9 +134,16 @@
   border-bottom: var(--bt-br-lightest);
 }
 
+.recipeInfo__ingredientFields:first-of-type .recipeInfo__btn--move--up {
+  display: none;
+}
+
+.recipeInfo__ingredientFields:last-of-type .recipeInfo__btn--move--down {
+  display: none;
+}
+
 .recipeInfo__row {
   display: -webkit-box;
-  display: flexbox;
   display: flexbox;
   display: -ms-flexbox;
   display: flex;
@@ -158,7 +164,6 @@
 .recipeInfo__row--ingredientName {
   display: -webkit-box;
   display: flexbox;
-  display: flexbox;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
@@ -174,13 +179,12 @@
   width: auto;
 }
 
-.recipeInfo__deleteBtn {
+.recipeInfo [class*='recipeInfo__btn'] {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   flex: 0 0 auto;
   display: -webkit-box;
-  display: flexbox;
   display: flexbox;
   display: -ms-flexbox;
   display: flex;
@@ -203,16 +207,16 @@
   height: 40px;
 }
 
-.recipeInfo__deleteBtn::after {
+.recipeInfo [class*='recipeInfo__btn']::after {
   content: '';
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
   flex: 0 0 auto;
   display: block;
+  background-color: var(--bt-c-darker);
   width: 100%;
   height: 100%;
-  background-color: var(--bt-c-error);
   -webkit-mask-size: contain;
   mask-size: contain;
   mask-size: contain;
@@ -222,21 +226,45 @@
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  -webkit-mask-image: url('assets/img/svg/trash.svg');
-  mask-image: url('assets/img/svg/trash.svg');
-  mask-image: url('assets/img/svg/trash.svg');
   -webkit-transition: var(--bt-tr);
   transition: var(--bt-tr);
   transition: var(--bt-tr);
 }
 
-.recipeInfo__deleteBtn:hover {
+.recipeInfo [class*='recipeInfo__btn']:hover {
   cursor: pointer;
+  background-color: var(--bt-c-darker);
+}
+
+.recipeInfo [class*='recipeInfo__btn']:hover::after {
+  background-color: var(--bt-c-lightest);
+}
+
+.recipeInfo [class*='recipeInfo__btn'][class*='--delete']::after {
+  background-color: var(--bt-c-error);
+  -webkit-mask-image: url('assets/img/svg/trash.svg');
+  mask-image: url('assets/img/svg/trash.svg');
+  mask-image: url('assets/img/svg/trash.svg');
+}
+
+.recipeInfo [class*='recipeInfo__btn'][class*='--delete']:hover {
   background-color: var(--bt-c-error);
 }
 
-.recipeInfo__deleteBtn:hover::after {
+.recipeInfo [class*='recipeInfo__btn'][class*='--delete']:hover::after {
   background-color: var(--bt-c-lightest);
+}
+
+.recipeInfo [class*='recipeInfo__btn'][class*='--move--up']::after {
+  -webkit-mask-image: url('assets/img/svg/moveUp.svg');
+  mask-image: url('assets/img/svg/moveUp.svg');
+  mask-image: url('assets/img/svg/moveUp.svg');
+}
+
+.recipeInfo [class*='recipeInfo__btn'][class*='--move--down']::after {
+  -webkit-mask-image: url('assets/img/svg/moveDown.svg');
+  mask-image: url('assets/img/svg/moveDown.svg');
+  mask-image: url('assets/img/svg/moveDown.svg');
 }
 
 .recipeInfo__label {

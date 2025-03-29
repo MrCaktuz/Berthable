@@ -53,7 +53,8 @@ function render_recipe_meta_box($post)
                   name="ingredients[<?php echo $index; ?>][name]"
                   value="<?php echo esc_attr($ingredient['name']); ?>">
               </fieldset>
-              <button class="recipeInfo__deleteBtn" type="button">Supprimer</button>
+              <button class="recipeInfo__btn--delete" type="button">Supprimer</button>
+              <button class="recipeInfo__btn--move--up" type="button">Déplacer vers le haut</button>
             </div>
             <div class="recipeInfo__row">
               <fieldset class="recipeInfo__fieldset">
@@ -74,6 +75,7 @@ function render_recipe_meta_box($post)
                   name="ingredients[<?php echo $index; ?>][unit]"
                   value="<?php echo esc_attr($ingredient['unit']); ?>">
               </fieldset>
+              <button class="recipeInfo__btn--move--down" type="button">Déplacer vers le bas</button>
             </div>
           </div>
           <?php endforeach; ?>
@@ -86,6 +88,7 @@ function render_recipe_meta_box($post)
             const ingredientList = document.getElementById('ingredientList');
             const addButton = document.getElementById('ingredientAddBtn');
 
+            // Add ingredient btn
             addButton.addEventListener('click', function () {
                 const index = ingredientList.children.length;
                 const group = document.createElement('div');
@@ -99,7 +102,8 @@ function render_recipe_meta_box($post)
                         id="ingredients[${index}][name]"
                         name="ingredients[${index}][name]">
                     </fieldset>
-                    <button class="recipeInfo__deleteBtn" type="button">Supprimer</button>
+                    <button class="recipeInfo__btn--delete" type="button">Supprimer</button>
+                    <button class="recipeInfo__btn--move--up" type="button">Déplacer vers le haut</button>
                   </div>
                   <div class="recipeInfo__row">
                     <fieldset class="recipeInfo__fieldset">
@@ -118,15 +122,35 @@ function render_recipe_meta_box($post)
                         id="ingredients[${index}][unit]"
                         name="ingredients[${index}][unit]">
                     </fieldset>
+                    <button class="recipeInfo__btn--move--down" type="button">Déplacer vers le bas</button>
                   </div>
                 `;
                 ingredientList.appendChild(group);
             });
 
+            // Remove ingredient btn
             ingredientList.addEventListener('click', function (e) {
-                if (e.target.classList.contains('recipeInfo__deleteBtn')) {
+                if (e.target.classList.contains('recipeInfo__btn--delete')) {
                     e.target.closest('.recipeInfo__ingredientFields').remove();
                 }
+            });
+
+            // Move ingredient btn
+            ingredientList.addEventListener("click", (event) => {
+              const btn = event.target;
+              const item = btn.closest(".recipeInfo__ingredientFields");
+
+              if (item) {
+                if (btn.classList.contains("recipeInfo__btn--move--up")) {
+                  const prev = item.previousElementSibling;
+                  if (prev) ingredientList.insertBefore(item, prev);
+                }
+
+                if (btn.classList.contains("recipeInfo__btn--move--down")) {
+                  const next = item.nextElementSibling;
+                  if (next) ingredientList.insertBefore(next, item);
+                }
+              };
             });
         });
     </script>

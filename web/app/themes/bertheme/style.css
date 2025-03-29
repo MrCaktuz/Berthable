@@ -1170,6 +1170,30 @@ p:last-child {
           mask-repeat: no-repeat;
 }
 
+.icon--moveDown {
+  background-color: var(--bt-c-darkest);
+  -webkit-mask-image: url("assets/img/svg/moveDown.svg");
+          mask-image: url("assets/img/svg/moveDown.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
+.icon--moveUp {
+  background-color: var(--bt-c-darkest);
+  -webkit-mask-image: url("assets/img/svg/moveUp.svg");
+          mask-image: url("assets/img/svg/moveUp.svg");
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+
 .icon--search {
   background-color: var(--bt-c-darkest);
   -webkit-mask-image: url("assets/img/svg/search.svg");
