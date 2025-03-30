@@ -26,7 +26,13 @@
               <img class="card__img" src="<?php echo get_template_directory_uri() .
                 '/assets/img/more-recipes.jpeg'; ?>" />
             </div>
-            <h2 class="card__title">Voir tous les <?php echo $category->name; ?></h2>
+            <div class="card__content">
+            <p class="card__info card__info--end transparent">
+              <span>0m</span>
+              <i class="icon icon--timer icon--2"></i>
+            </p>
+          </div>
+            <h2 class="card__title">Tous les <?php echo $category->name; ?></h2>
           </a>
         </div>
       </section>

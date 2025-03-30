@@ -554,6 +554,10 @@ p:last-child {
   margin: 0;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 /* Components */
 .btn {
   --bt-btn-radius: var(--bt-radius-4);
@@ -675,9 +679,9 @@ p:last-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   border-radius: var(--bt-radius-1);
   background-color: var(--bt-c-darker);
   color: var(--bt-c-lighter);
@@ -767,11 +771,6 @@ p:last-child {
   text-align: center;
   word-break: break-word;
   font-size: var(--bt-fs-3);
-}
-@media (min-width: 768px) {
-  .card__title {
-    font-size: var(--bt-fs-4);
-  }
 }
 .card__info {
   -webkit-box-flex: 1;
